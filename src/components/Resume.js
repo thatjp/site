@@ -8,15 +8,8 @@ class Resume extends Component {
     super(props);
     
     this.state = {
-      showing: false,
       pageNumber: 1
     }
-  }
-  
-  showProjects = () => {
-    this.setState({
-      showing: !this.state.showing
-    })
   }
 
   onDocumentLoad = ({ numPages }) => {
@@ -25,7 +18,7 @@ class Resume extends Component {
 
   isShowing = () => {
     const { pageNumber }= this.state
-    if(this.state.showing){
+    if(this.props.isOpen){
       return (
         <div>          
           <Document
@@ -40,12 +33,16 @@ class Resume extends Component {
     }
   }
 
+  showResume = () => {
+    this.props.onClick('resume')
+  }
+
   render() {
     return (
       <div>
         <div>
           <h1 
-            onClick={this.showProjects}
+            onClick={this.showResume}
           >
             Resume
           </h1>

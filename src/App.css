@@ -26,3 +26,34 @@ a {
 p {
   font-family: 'Roboto Mono', monospace;
 }
+
+.nav-projects_url {
+  list-style: none;
+}
+
+.nav-projects_url li {
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.nav-projects_url li a {
+  transition: color 0.2s ease;
+  color: grey;
+}
+
+.nav-projects_url li a:hover {
+  color: black;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav li a {
+  transition: color 0.2s ease;
+  color: grey;
+}
+
+.nav li a:hover {
+  color: black;
+}

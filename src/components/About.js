@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 
 class About extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showing: false
-    }
-  }
-  
+
   isShowing = () => {
-    if(this.state.showing){
+    if(this.props.isOpen){
       return ( 
         <p>
           hi I'm JP.
@@ -19,9 +13,7 @@ class About extends Component {
   }
 
   showProjects = () => {
-    this.setState({
-      showing: !this.state.showing
-    })
+    this.props.onClick('about')
   }
 
   render() {

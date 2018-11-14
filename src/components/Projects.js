@@ -17,9 +17,9 @@ class Projects extends Component {
 
   isShowing = () => {
     let urls = this.state.urls
-    if(this.state.showing){
+    if(this.props.isOpen){
       return ( 
-      <ul>
+      <ul className="nav-projects_url">
           {
             Object.keys(urls).map((url, idx) => (
               <li 
@@ -28,6 +28,7 @@ class Projects extends Component {
                 <a 
                   href={ urls[url] } 
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {url}
                 </a>
@@ -40,17 +41,17 @@ class Projects extends Component {
   }
 
   showProjects = () => {
-    this.setState({
-      showing: !this.state.showing
-    })
+    this.props.onClick('projects')
   }
 
   render() {
-    
+  
     return (
       <div>
-        <h1 onClick={this.showProjects}>Projects</h1>
-        { this.isShowing() }
+        <h1 
+          onClick={this.showProjects}
+        >Projects</h1>
+        {this.isShowing()}
       </div>
     );
   }
