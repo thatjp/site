@@ -4,13 +4,13 @@ class Resume extends Component {
   render() {
     return (
       <div>
-        <a 
+        {/* <a 
          href={require("../assets/jp-harris-resume.pdf")} download
-        >
+        > */}
           <h1>
             Resume
           </h1>
-        </a>
+        {/* </a> */}
       </div>
     );
   }

@@ -5,6 +5,8 @@ import Sketches from './Sketches'
 import Resume from './Resume'
 import About from './About'
 
+import AboutStlyed from './styles/About'
+
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -62,6 +64,7 @@ class Nav extends Component {
     const isOpen = this.state.isOpen
     return (
       <div>
+        <AboutStlyed>
         <Projects 
           isOpen={isOpen.projects}
           onClick={this.handleClick}
@@ -78,6 +81,7 @@ class Nav extends Component {
           isOpen={isOpen.resume}
           onClick={this.handleClick}
         />
+        </AboutStlyed>
       </div>
     );
   }
