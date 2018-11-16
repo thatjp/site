@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import TitleWrapper from "./styles/elements/TitleWrapper";
+import NavContent from "./styles/elements/NavContentA";
+
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -25,13 +28,13 @@ class Projects extends Component {
               <li 
                 key={idx}
               >
-                <a 
+                <NavContent 
                   href={ urls[url] } 
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {url}
-                </a>
+                </NavContent>
               </li>
             ))
           }
@@ -48,9 +51,11 @@ class Projects extends Component {
   
     return (
       <div>
-        <h1 
+        <TitleWrapper 
           onClick={this.showProjects}
-        >Projects</h1>
+        >
+          Projects
+        </TitleWrapper>
         {this.isShowing()}
       </div>
     );

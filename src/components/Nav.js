@@ -5,8 +5,6 @@ import Sketches from './Sketches'
 import Resume from './Resume'
 import About from './About'
 
-import AboutStlyed from './styles/About'
-
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -64,24 +62,22 @@ class Nav extends Component {
     const isOpen = this.state.isOpen
     return (
       <div>
-        <AboutStlyed>
-        <Projects 
-          isOpen={isOpen.projects}
-          onClick={this.handleClick}
-        />
-        <Sketches 
-          isOpen={isOpen.sketches}
-          onClick={this.handleClick}
-        />
-        <About 
-          isOpen={isOpen.about}
-          onClick={this.handleClick}
-        />
-        <Resume 
-          isOpen={isOpen.resume}
-          onClick={this.handleClick}
-        />
-        </AboutStlyed>
+          <Projects 
+            isOpen={isOpen.projects}
+            onClick={this.handleClick}
+          />
+          <Sketches 
+            isOpen={isOpen.sketches}
+            onClick={this.handleClick}
+          />
+          <About 
+            isOpen={isOpen.about}
+            onClick={this.handleClick}
+          />
+          <Resume 
+            isOpen={isOpen.resume}
+            onClick={this.handleClick}
+          />
       </div>
     );
   }

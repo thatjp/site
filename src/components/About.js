@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
+import TitleWrapper from './styles/elements/TitleWrapper'
+import NavContentP from "./styles/elements/NavContentP";
+
 class About extends Component {
 
   isShowing = () => {
     if(this.props.isOpen){
       return ( 
-        <p>
+        <NavContentP>
           hi I'm JP.
-        </p>
+        </NavContentP>
       )
     }
   }
@@ -19,7 +22,11 @@ class About extends Component {
   render() {
     return (
       <div>
-        <h1 onClick={this.showProjects}>About</h1>
+        <TitleWrapper 
+          onClick={this.showProjects}
+        >
+          About
+        </TitleWrapper>
         {this.isShowing()}
       </div>
     );

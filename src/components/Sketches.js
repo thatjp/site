@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import TitleWrapper from "./styles/elements/TitleWrapper";
+import NavContent from "./styles/elements/NavContentA";
+
 class Sketches extends Component {
   constructor(props) {
     super(props);
@@ -28,12 +31,12 @@ class Sketches extends Component {
               <li 
                 key={idx}
               >
-                <a 
+                <NavContent 
                   href={ sketchUrls[title] } target="_blank"
                   rel="noopener noreferrer"
                 >
                   {title}
-                </a>
+                </NavContent>
               </li>
             ))
           }
@@ -49,11 +52,11 @@ class Sketches extends Component {
   render() {
     return (
       <div>
-        <h1 
+        <TitleWrapper 
           onClick={this.showSketches}
         >
             Sketches
-        </h1>
+        </TitleWrapper>
         { this.isShowing() }
       </div>
     );

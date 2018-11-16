@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import TitleWrapper from "./styles/elements/TitleWrapper";
+
 class Resume extends Component {
   render() {
     return (
@@ -7,9 +9,9 @@ class Resume extends Component {
         {/* <a 
          href={require("../assets/jp-harris-resume.pdf")} download
         > */}
-          <h1>
+          <TitleWrapper>
             Resume
-          </h1>
+          </TitleWrapper>
         {/* </a> */}
       </div>
     );
