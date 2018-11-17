@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 
 import TitleWrapper from "./styles/elements/TitleWrapper";
+import NavContentA from "./styles/elements/NavContentA";
 
 class Resume extends Component {
   render() {
     return (
       <div>
-        {/* <a 
-         href={require("../assets/jp-harris-resume.pdf")} download
-        > */}
+        <NavContentA
+         href={require("../assets/jp-harris-resume.pdf")} 
+         download
+         target="_blank"
+         rel="noopener noreferrer"
+         resume
+        >
           <TitleWrapper>
             Resume
           </TitleWrapper>
-        {/* </a> */}
+        </NavContentA>
       </div>
     );
   }

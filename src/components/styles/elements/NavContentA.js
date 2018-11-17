@@ -5,5 +5,6 @@ export default styled.a`
   text-decoration: none;
   font-family: 'Roboto Mono', monospace;
   font-size: 12px;
-  padding: 5px 10px;
+  padding: ${props => props.resume ? 'none' : '5px 10px'};
+  outline: 0;
 `;

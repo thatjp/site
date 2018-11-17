@@ -16,7 +16,8 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+    vertical-align: baseline;
+    outline: 0;
 }
 
 /* make sure to set some focus styles for accessibility */
@@ -328,6 +329,9 @@ textarea {
     color: #222;
 }
 
+a:hover, a:active, a:focus {
+    outline: 0;
+  }
 
 ::-moz-selection {
     background: #b3d4fc;
