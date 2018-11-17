@@ -4,6 +4,7 @@ import Projects from './Projects'
 import Sketches from './Sketches'
 import Resume from './Resume'
 import About from './About'
+import Contact from './Contact'
 
 class Nav extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class Nav extends Component {
         sketches: false,
         about: false,
         resume: false,
+        contact: false
       }
       this.setState({isOpen: isClosedState})
     } else if (name === "about") {
@@ -37,6 +39,7 @@ class Nav extends Component {
         sketches: false,
         about: !isClosedState.about,
         resume: false,
+        contact: false
       }
       this.setState({isOpen: isClosedState})    
     } else if (name === "sketches") {
@@ -45,6 +48,7 @@ class Nav extends Component {
         sketches: !isClosedState.sketches,
         about: false,
         resume: false,
+        contact: false,
       }
       this.setState({isOpen: isClosedState})
     } else if (name === "resume") {
@@ -53,31 +57,46 @@ class Nav extends Component {
         sketches: false,
         about: false,
         resume: !isClosedState.resume,
+        contact: false,
+      }
+      this.setState({isOpen: isClosedState})
+    } else if (name === "contact") {
+      isClosedState = {
+        projects: false,
+        sketches: false,
+        about: false,
+        resume: false,
+        contact: !isClosedState.contact,
       }
       this.setState({isOpen: isClosedState})
     }
+    
   }
 
   render() {
     const isOpen = this.state.isOpen
     return (
       <div>
-          <Projects 
-            isOpen={isOpen.projects}
-            onClick={this.handleClick}
-          />
-          <Sketches 
-            isOpen={isOpen.sketches}
-            onClick={this.handleClick}
-          />
-          <About 
-            isOpen={isOpen.about}
-            onClick={this.handleClick}
-          />
-          <Resume 
-            isOpen={isOpen.resume}
-            onClick={this.handleClick}
-          />
+        <About 
+          isOpen={isOpen.about}
+          onClick={this.handleClick}
+        />
+        <Projects 
+          isOpen={isOpen.projects}
+          onClick={this.handleClick}
+        />
+        <Sketches 
+          isOpen={isOpen.sketches}
+          onClick={this.handleClick}
+        />
+        <Contact 
+          isOpen={isOpen.contact}
+          onClick={this.handleClick}
+        />
+        <Resume 
+          isOpen={isOpen.resume}
+          onClick={this.handleClick}
+        />
       </div>
     );
   }

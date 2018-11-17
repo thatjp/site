@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import TitleWrapper from "./styles/elements/TitleWrapper";
-import NavContent from "./styles/elements/NavContentA";
+import NavContentA from "./styles/elements/NavContentA";
 
 class Projects extends Component {
   constructor(props) {
@@ -19,7 +19,9 @@ class Projects extends Component {
   }
 
   isShowing = () => {
+
     let urls = this.state.urls
+    
     if(this.props.isOpen){
       return ( 
       <ul className="nav-projects_url">
@@ -28,13 +30,13 @@ class Projects extends Component {
               <li 
                 key={idx}
               >
-                <NavContent 
+                <NavContentA 
                   href={ urls[url] } 
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {url}
-                </NavContent>
+                </NavContentA>
               </li>
             ))
           }

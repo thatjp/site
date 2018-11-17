@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 
 import TitleWrapper from "./styles/elements/TitleWrapper";
-import NavContent from "./styles/elements/NavContentA";
+import NavContentA from "./styles/elements/NavContentA";
+import NavContentP from './styles/elements/NavContentP';
 
 class Sketches extends Component {
   constructor(props) {
     super(props);
     
     this.state = {
-      sketchUrls: {
-        "google": "https://google.com",
-        "goldi": "https://goldi.com",
-        "reddit": "https://reddit.com",
-        "google 2": "https://google.com",
-        "google 3": "https://googdafsdfadgale.com"
-      },
-      showing: false
+      sketchUrls: {},
+      showing: false,
+      // isVisable: "visable"
     }
   }
   
   isShowing = () => {
     let sketchUrls = this.state.sketchUrls
-    if(this.props.isOpen){
+    if(this.props.isOpen && Object.keys(sketchUrls).length){
       return ( 
         <ul 
           className='nav-projects_url'
@@ -31,16 +27,25 @@ class Sketches extends Component {
               <li 
                 key={idx}
               >
-                <NavContent 
+                <NavContentA 
                   href={ sketchUrls[title] } target="_blank"
                   rel="noopener noreferrer"
                 >
                   {title}
-                </NavContent>
+                </NavContentA>
               </li>
             ))
           }
         </ul>
+      )
+    } else if (this.props.isOpen){
+      return (
+          <NavContentP className="content" 
+          pose={this.props.isOpen ? 'open' : 'closed'}>
+            <div>
+              N/A
+            </div>
+          </NavContentP>
       )
     }
   }
@@ -55,7 +60,7 @@ class Sketches extends Component {
         <TitleWrapper 
           onClick={this.showSketches}
         >
-            Sketches
+          Sketches
         </TitleWrapper>
         { this.isShowing() }
       </div>
