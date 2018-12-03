@@ -24,6 +24,7 @@ class About extends Component {
       <div>
         <TitleWrapper 
           onClick={this.showProjects}
+          first
         >
           About
         </TitleWrapper>

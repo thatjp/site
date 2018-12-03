@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Styled from 'styled-components'
 
 import Projects from './Projects'
 import Sketches from './Sketches'
