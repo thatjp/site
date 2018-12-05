@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import Nav from './components/Nav';
-import Content from './components/Content'
 import ContentWrapper from './components/ContentWrapper'
 import './reset.css';
 

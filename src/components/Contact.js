@@ -1,47 +1,27 @@
-import React, { Component } from 'react'
-
-import TitleWrapper from './styles/elements/TitleWrapper'
+import React from 'react'
 import NavContentA from "./styles/elements/NavContentA";
+import FadeAnimation from './styles/elements/FadeAnimation'
 
-export default class Contact extends Component {
+const Contact = () => {
 
-  isShowing = () => {
-    if(this.props.isOpen){
-      return (
-        <div>
-          <NavContentA 
-            href="https://github.com/thatjp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            github
-          </NavContentA>
-          <NavContentA 
-            href="https://www.instagram.com/_jpharris_/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            instagram
-          </NavContentA>
-        </div>
-      )
-    }
-  }
-
-  showProjects = () => {
-    this.props.onClick('contact')
-  }
-
-  render() {
-    return (
-      <div>
-        <TitleWrapper 
-          onClick={this.showProjects}
-        >
-          Contact
-        </TitleWrapper>
-        {this.isShowing()}
-      </div>
-    );
-  }
+  return (
+    <FadeAnimation>
+      <NavContentA 
+        href="https://github.com/thatjp"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        github
+      </NavContentA>
+      <NavContentA 
+        href="https://www.instagram.com/_jpharris_/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        instagram
+      </NavContentA>
+    </FadeAnimation>
+  );
 }
+
+export default Contact

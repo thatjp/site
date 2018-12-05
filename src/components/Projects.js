@@ -1,21 +1,7 @@
 import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components'
-
+import FadeAnimation from './styles/elements/FadeAnimation'
 import NavContentA from "./styles/elements/NavContentA";
 
-const fade = keyframes`
-  from {
-    opacity: 0;
-
-  }
-  to {
-    opacity: 1;
-  }
-`
-
-const FadeAnimation = styled.div`
-  animation: ${fade} .3s;
-`
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -29,10 +15,6 @@ class Projects extends Component {
       },
       showing: false
     }
-  }
-
-  showProjects = () => {
-    this.props.onClick('projects')
   }
 
   render() {
