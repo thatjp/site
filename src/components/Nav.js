@@ -1,106 +1,83 @@
-import React, { Component } from 'react';
-import Styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components'
 
 import Projects from './Projects'
 import Sketches from './Sketches'
 import Resume from './Resume'
 import About from './About'
 import Contact from './Contact'
+import TitleWrapper from "./styles/elements/TitleWrapper";
 
-class Nav extends Component {
-  constructor(props) {
-    super(props);
+const NavItemWrapper = styled.div`
+  display: inline;
+`
 
-    this.state = {
-      isOpen: {
-        projects: false,
-        sketches: false,
-        about: false,
-        resume: false,
-      }
+
+const Nav = (props) => {
+
+  const showProjects = (itemName) => {
+    props.onClick('projects')
+
+    switch (itemName) {
+      case 'projects':
+        props.onClick('projects')
+      break;
+      case 'about':
+        props.onClick('about')
+      break;
+      case 'sketches':
+        props.onClick('sketches')
+      break;
+      case 'contact':
+        props.onClick('contact')
+      break;  
+      case 'resume':
+        props.onClick('resume')
+      break;      
+      default:
+        break;
     }
   }
 
-  handleClick = (name) => {
-
-    let isClosedState = Object.assign({}, this.state.isOpen)
-
-    if (name === "projects") {      
-      isClosedState = {
-        projects: !isClosedState.projects,
-        sketches: false,
-        about: false,
-        resume: false,
-        contact: false
-      }
-      this.setState({isOpen: isClosedState})
-    } else if (name === "about") {
-      isClosedState = {
-        projects: false,
-        sketches: false,
-        about: !isClosedState.about,
-        resume: false,
-        contact: false
-      }
-      this.setState({isOpen: isClosedState})    
-    } else if (name === "sketches") {
-      isClosedState = {
-        projects: false,
-        sketches: !isClosedState.sketches,
-        about: false,
-        resume: false,
-        contact: false,
-      }
-      this.setState({isOpen: isClosedState})
-    } else if (name === "resume") {
-      isClosedState = {
-        projects: false,
-        sketches: false,
-        about: false,
-        resume: !isClosedState.resume,
-        contact: false,
-      }
-      this.setState({isOpen: isClosedState})
-    } else if (name === "contact") {
-      isClosedState = {
-        projects: false,
-        sketches: false,
-        about: false,
-        resume: false,
-        contact: !isClosedState.contact,
-      }
-      this.setState({isOpen: isClosedState})
-    }
-    
-  }
-
-  render() {
-    const isOpen = this.state.isOpen
     return (
       <div>
-        <About 
-          isOpen={isOpen.about}
-          onClick={this.handleClick}
-        />
-        <Projects 
-          isOpen={isOpen.projects}
-          onClick={this.handleClick}
-        />
-        <Sketches 
-          isOpen={isOpen.sketches}
-          onClick={this.handleClick}
-        />
-        <Contact 
-          isOpen={isOpen.contact}
-          onClick={this.handleClick}
-        />
-        <Resume 
-          isOpen={isOpen.resume}
-          onClick={this.handleClick}
-        />
+        <NavItemWrapper>
+          <TitleWrapper 
+            onClick={() => showProjects('about')}
+          >
+            About
+          </TitleWrapper>
+        </NavItemWrapper>
+        <NavItemWrapper>
+          <TitleWrapper 
+            onClick={() => showProjects('projects')}
+          >
+            Projects
+          </TitleWrapper>
+        </NavItemWrapper>
+        <NavItemWrapper>
+          <TitleWrapper 
+            onClick={() => showProjects('sketches')}
+          >
+            Sketches
+          </TitleWrapper>
+        </NavItemWrapper>
+        <NavItemWrapper>
+          <TitleWrapper 
+            onClick={() => showProjects('contact')}
+          >
+            Contact
+          </TitleWrapper>
+        </NavItemWrapper>
+        <NavItemWrapper>
+        <TitleWrapper 
+            onClick={() => showProjects('resume')}
+          >
+            Resume
+          </TitleWrapper>
+        </NavItemWrapper>
       </div>
     );
   }
-}
 
 export default Nav;

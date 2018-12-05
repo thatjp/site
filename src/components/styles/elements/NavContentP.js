@@ -7,6 +7,7 @@ const Content = posed.div({
 });
 
 const NavContentP = styled(Content)`
+  display: inline;
   font-family: 'Roboto Mono', monospace;
   font-size: 12px;
   padding: 5px 10px;

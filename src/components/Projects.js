@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+import styled, { keyframes } from 'styled-components'
 
-import TitleWrapper from "./styles/elements/TitleWrapper";
 import NavContentA from "./styles/elements/NavContentA";
 
+const fade = keyframes`
+  from {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+  }
+`
+
+const FadeAnimation = styled.div`
+  animation: ${fade} .3s;
+`
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -18,47 +31,33 @@ class Projects extends Component {
     }
   }
 
-  isShowing = () => {
-
-    let urls = this.state.urls
-    
-    if(this.props.isOpen){
-      return ( 
-      <ul className="nav-projects_url">
-          {
-            Object.keys(urls).map((url, idx) => (
-              <li 
-                key={idx}
-              >
-                <NavContentA 
-                  href={ urls[url] } 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {url}
-                </NavContentA>
-              </li>
-            ))
-          }
-      </ul>
-      )
-    }
-  }
-
   showProjects = () => {
     this.props.onClick('projects')
   }
 
   render() {
   
+    let urls = this.state.urls
+
     return (
       <div>
-        <TitleWrapper 
-          onClick={this.showProjects}
-        >
-          Projects
-        </TitleWrapper>
-        {this.isShowing()}
+        <ul className="nav-projects_url">
+            {
+              Object.keys(urls).map((url, idx) => (
+                <FadeAnimation 
+                  key={idx}
+                >
+                  <NavContentA 
+                    href={ urls[url] } 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {url}
+                  </NavContentA>
+                </FadeAnimation>
+              ))
+            }
+        </ul>
       </div>
     );
   }

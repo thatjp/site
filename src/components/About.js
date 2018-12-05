@@ -22,12 +22,9 @@ class About extends Component {
   render() {
     return (
       <div>
-        <TitleWrapper 
-          onClick={this.showProjects}
-          first
-        >
-          About
-        </TitleWrapper>
+        <NavContentP>
+          hi I'm JP.
+        </NavContentP>
         {this.isShowing()}
       </div>
     );

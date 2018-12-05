@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export default styled.h1`
-  /* display: inline-block; */
   font-family: 'Roboto Mono', monospace;
   transition: color 0.2s ease;
   color: grey;
