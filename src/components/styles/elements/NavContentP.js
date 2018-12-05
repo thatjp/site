@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import posed from "react-pose";
+import styled from 'styled-components';
+import posed from 'react-pose';
 
 const Content = posed.div({
   closed: { height: 0 },
-  open: { height: 'auto' }
+  open: { height: 'auto' },
 });
 
 const NavContentP = styled(Content)`
@@ -17,4 +17,4 @@ const NavContentP = styled(Content)`
   -ms-user-select: none; /* IE10+ */
 `;
 
-export default NavContentP
+export default NavContentP;

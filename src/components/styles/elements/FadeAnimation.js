@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 
 const fade = keyframes`
   from {
@@ -8,10 +8,10 @@ const fade = keyframes`
   to {
     opacity: 1;
   }
-`
+`;
 
 const FadeAnimation = styled.div`
   animation: ${fade} 1s;
-`
+`;
 
-export default FadeAnimation
+export default FadeAnimation;
