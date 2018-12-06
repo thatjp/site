@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TitleWrapper from './styles/elements/TitleWrapper';
+import FadeAnimation from './styles/elements/FadeAnimation';
 
 const NavItemWrapper = styled.div`
   display: inline;
@@ -33,7 +34,7 @@ const Nav = (props) => {
   };
 
   return (
-    <div>
+    <FadeAnimation>
       <NavItemWrapper>
         <TitleWrapper
           onClick={() => showProjects('about')}
@@ -69,7 +70,7 @@ const Nav = (props) => {
           Resume
         </TitleWrapper>
       </NavItemWrapper>
-    </div>
+    </FadeAnimation>
   );
 };
 
