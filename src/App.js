@@ -121,6 +121,7 @@ class App extends Component {
                 about={state.isOpen.about}
                 projects={state.isOpen.projects}
                 sketches={state.isOpen.sketches}
+                resume={state.isOpen.resume}
               />
             </Column>
             <Column2>

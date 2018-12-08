@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TitleWrapper from './styles/elements/TitleWrapper';
 import FadeAnimation from './styles/elements/FadeAnimation';
+import NavContentA from './styles/elements/NavContentA';
 
 const NavItemWrapper = styled.div`
   display: inline;
@@ -24,9 +25,6 @@ const Nav = (props) => {
         break;
       case 'contact':
         props.onClick('contact');
-        break;
-      case 'resume':
-        props.onClick('resume');
         break;
       default:
         break;
@@ -64,11 +62,17 @@ const Nav = (props) => {
         </TitleWrapper>
       </NavItemWrapper>
       <NavItemWrapper>
-        <TitleWrapper
-          onClick={() => showProjects('resume')}
+        <NavContentA
+          href={require('../assets/jp-harris-resume.pdf')} // eslint-disable-line global-require
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          resume
         >
-          Resume
-        </TitleWrapper>
+          <TitleWrapper>
+            Resume
+          </TitleWrapper>
+        </NavContentA>
       </NavItemWrapper>
     </FadeAnimation>
   );

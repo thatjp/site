@@ -11,7 +11,7 @@ const fade = keyframes`
 `;
 
 const FadeAnimation = styled.div`
-  animation: ${fade} 1s;
+  animation: ${fade} .5s;
 `;
 
 export default FadeAnimation;
