@@ -9,6 +9,7 @@ const Outer = styled.div`
   grid-template-columns: 1fr 1fr;
   height: 200px;
   position: relative;
+  /* * { outline: solid 0.25rem rgba(10, 10, 10, 0.5); } */
 `;
 
 const Column = styled.div`
@@ -17,6 +18,7 @@ const Column = styled.div`
 
 const Column2 = styled.div`
   grid-column-start: 2;
+  /* height: 200px; */
 `;
 
 const Inner = styled.div`
@@ -29,6 +31,10 @@ const Inner = styled.div`
   left: 30%;
   -ms-transform: translate(-30%, -30%);
   transform: translate(-30%, -30%);
+  @media (min-width : 320px) and (max-width : 480px) {
+    width: 90%;
+    top: 25%;
+  }
 `;
 class App extends Component {
   constructor(props) {

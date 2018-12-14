@@ -11,7 +11,7 @@ const urls = {
 
 const Projects = () => (
   <div>
-    <ul className="nav-projects_url">
+    <ul>
       {
         Object.keys(urls).map(url => (
           <FadeAnimation

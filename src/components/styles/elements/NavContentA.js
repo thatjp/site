@@ -7,4 +7,8 @@ export default styled.a`
   font-size: 12px;
   padding: ${props => (props.resume ? 'none' : '5px 10px')};
   outline: 0;
+  @media (min-width : 320px) and (max-width : 480px) {
+    font-size: 10px;
+    top: 25%;
+  }
 `;
