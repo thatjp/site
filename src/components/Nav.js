@@ -64,9 +64,7 @@ const Nav = (props) => {
       <NavItemWrapper>
         <NavContentA
           href={require('../assets/JP-Harris-resume-121318.pdf')} // eslint-disable-line global-require
-          download
           target="_blank"
-          rel="noopener noreferrer"
           resume
         >
           <TitleWrapper>

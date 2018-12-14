@@ -6,10 +6,12 @@ import './reset.css';
 
 const Outer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 200px;
+  margin: 30px;
   position: relative;
   /* * { outline: solid 0.25rem rgba(10, 10, 10, 0.5); } */
+  @media (min-width : 320px) and (max-width : 480px) {
+    margin: 15px;
+  }
 `;
 
 const Column = styled.div`
@@ -18,21 +20,22 @@ const Column = styled.div`
 
 const Column2 = styled.div`
   grid-column-start: 2;
-  /* height: 200px; */
 `;
 
 const Inner = styled.div`
   width: 50%;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 30px;
   left: 30%;
   -ms-transform: translate(-30%, -30%);
   transform: translate(-30%, -30%);
   @media (min-width : 320px) and (max-width : 480px) {
-    width: 90%;
+    width: 100%;
     top: 25%;
   }
 `;
