@@ -63,7 +63,7 @@ const Nav = (props) => {
       </NavItemWrapper>
       <NavItemWrapper>
         <NavContentA
-          href={require('../assets/jp-harris-resume.pdf')} // eslint-disable-line global-require
+          href={require('../assets/JP-Harris-resume-121318.pdf')} // eslint-disable-line global-require
           download
           target="_blank"
           rel="noopener noreferrer"
