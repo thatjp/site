@@ -54,7 +54,9 @@ class App extends Component {
   }
 
   handleClick = (name) => {
+
     const isOpen = this.state.isOpen;
+
     let isClosedState = Object.assign({}, isOpen);
 
     if (name === 'projects') {

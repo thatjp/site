@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -33,6 +34,7 @@ const Nav = (props) => {
 
   return (
     <FadeAnimation>
+      <img src={require('../assets/arrow.svg')} alt="Here" />
       <NavItemWrapper>
         <TitleWrapper
           onClick={() => showProjects('about')}
@@ -63,7 +65,7 @@ const Nav = (props) => {
       </NavItemWrapper>
       <NavItemWrapper>
         <NavContentA
-          href={require('../assets/JP-Harris-resume-121318.pdf')} // eslint-disable-line global-require
+          href={require('../assets/JP-Harris-resume-121318.pdf')}
           target="_blank"
           resume
         >
