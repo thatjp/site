@@ -10,6 +10,13 @@ const NavItemWrapper = styled.div`
   display: inline;
 `;
 
+const style = {
+  marginRight: '5px',
+  height: '15px',
+  color: 'red',
+  display: 'inline-block',
+};
+
 const Nav = (props) => {
   const showProjects = (itemName) => {
     props.onClick('projects');
@@ -34,12 +41,11 @@ const Nav = (props) => {
 
   return (
     <FadeAnimation>
-      <img src={require('../assets/arrow.svg')} alt="Here" />
       <NavItemWrapper>
         <TitleWrapper
           onClick={() => showProjects('about')}
-        >
-          About
+        ><img src={require('../assets/arrow.svg')} alt="Here" style={style} />
+          <h2>About</h2>
         </TitleWrapper>
       </NavItemWrapper>
       <NavItemWrapper>

@@ -39,6 +39,12 @@ const Inner = styled.div`
     top: 25%;
   }
 `;
+
+const style = {
+  height: '15px',
+  color: 'red',
+};
+
 class App extends Component {
   constructor(props) {
     super(props);

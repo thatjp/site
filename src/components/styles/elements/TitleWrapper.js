@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.h1`
+export default styled.div`
   font-family: 'Roboto Mono', monospace;
   transition: color 0.2s ease;
   color: grey;
@@ -16,5 +16,8 @@ export default styled.h1`
 
   :hover {
     color: black;
+  }
+  h2 {
+    display: inline-block;
   }
 `;
