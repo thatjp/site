@@ -44,7 +44,8 @@ const Nav = (props) => {
       <NavItemWrapper>
         <TitleWrapper
           onClick={() => showProjects('about')}
-        ><img src={require('../assets/arrow.svg')} alt="Here" style={style} />
+        >
+        {/* <img src={require('../assets/arrow.svg')} alt="Here" style={style} /> */}
           <h2>About</h2>
         </TitleWrapper>
       </NavItemWrapper>

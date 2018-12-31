@@ -1,15 +1,27 @@
 import React from 'react';
 import NavContentA from './styles/elements/NavContentA';
+import NavContentP from './styles/elements/NavContentP';
 import FadeAnimation from './styles/elements/FadeAnimation';
 
 const sketchUrls = {
-  'Threejs React Sketch': 'https://three-playground.netlify.com/',
+  // 'Threejs React Sketch': 'https://three-playground.netlify.com/',
 };
 
+function isEmpty(obj) {
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) { return false; }
+  }
+  return true;
+}
+
 const Sketches = () => (
+  
   <div>
-    <ul>
-      {
+    {console.log(isEmpty(sketchUrls))}
+    { !isEmpty(sketchUrls)
+      ? (
+        <ul>
+          {
         Object.keys(sketchUrls).map(url => (
           <FadeAnimation
             key={url}
@@ -24,7 +36,9 @@ const Sketches = () => (
           </FadeAnimation>
         ))
       }
-    </ul>
+        </ul>
+      ) : <NavContentP red> Check back soon </NavContentP>
+    }
   </div>
 );
 

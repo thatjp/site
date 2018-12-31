@@ -10,6 +10,7 @@ const NavContentP = styled(Content)`
   display: inline;
   font-family: 'Roboto Mono', monospace;
   font-size: 12px;
+  color: ${props => (props.red ? 'red' : 'black')};
   padding: ${props => (props.about ? '0px' : '5px 10px')};
   -webkit-user-select: none; /* Chrome/Safari */        
   -moz-user-select: none; /* Firefox */
