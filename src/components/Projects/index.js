@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectsStyles from './styles';
 import FadeAnimation from '../styles/FadeAnimation';
 
 const urls = {
@@ -10,14 +11,12 @@ const urls = {
 };
 
 const Projects = () => (
-  <div>
+  <ProjectsStyles>
     <ul>
       {
         Object.keys(urls).map(url => (
-          <FadeAnimation
-            key={url}
-          >
-            <li>
+          <li>
+            <FadeAnimation>
               <a
                 href={urls[url]}
                 target="_blank"
@@ -25,12 +24,12 @@ const Projects = () => (
               >
                 {url}
               </a>
-            </li>
-          </FadeAnimation>
+            </FadeAnimation>
+          </li>
         ))
       }
     </ul>
-  </div>
+  </ProjectsStyles>
 );
 
 export default Projects;

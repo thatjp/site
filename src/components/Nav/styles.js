@@ -12,8 +12,8 @@ const NavStyles = styled.div`
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; 
-    font-size: 16px;
-    padding: ${props => (props.first ? '10px 10px 5px 10px' : '5px 10px')}; 
+    font-size: 1rem;
+    padding: 5px; 
     :hover {
       color: black;
     }

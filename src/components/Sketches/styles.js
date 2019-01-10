@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 const SketchesStyles = styled.div`
-  margin: 10px 0px;
+  li {
+    margin-bottom: 5px;
+  }
 `;
 
 export default SketchesStyles;

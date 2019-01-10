@@ -37,9 +37,7 @@ const Nav = (props) => {
           href={require('../../assets/JP-Harris-resume-121318.pdf')}
           target="_blank"
         >
-          <div>
-            <h2>Resume</h2>
-          </div>
+          <h2>Resume</h2>
         </a>
       </NavStyles>
     </FadeAnimation>

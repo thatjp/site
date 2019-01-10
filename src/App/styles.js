@@ -341,12 +341,13 @@ const theme = {
 };
 
 const Outer = styled.div`
+    width: 100%;
 `;
 
 const Inner = styled.div`
   display: flex;
   justify-content: left;
-  margin: 100px 300px;
+  margin: 10% 15%;
 `;
 
 export {

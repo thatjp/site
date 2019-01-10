@@ -1,5 +1,6 @@
 import React from 'react';
 import FadeAnimation from '../styles/FadeAnimation';
+import SketchesStyles from './styles';
 
 const sketchUrls = {
   // 'Threejs React Sketch': 'https://three-playground.netlify.com/',
@@ -14,16 +15,14 @@ function isEmpty(obj) {
 
 const Sketches = () => (
 
-  <div>
+  <SketchesStyles>
     { isEmpty(sketchUrls)
       ? (
         <ul>
           {
         Object.keys(sketchUrls).map(url => (
-          <FadeAnimation
-            key={url}
-          >
-            <li>
+          <li>
+            <FadeAnimation>
               <a
                 href={sketchUrls[url]}
                 target="_blank"
@@ -31,8 +30,8 @@ const Sketches = () => (
               >
                 {url}
               </a>
-            </li>
-          </FadeAnimation>
+            </FadeAnimation>
+          </li>
         ))
       }
         </ul>
@@ -44,7 +43,7 @@ const Sketches = () => (
         </FadeAnimation>
       )
     }
-  </div>
+  </SketchesStyles>
 );
 
 export default Sketches;
