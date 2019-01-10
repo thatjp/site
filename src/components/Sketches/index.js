@@ -1,6 +1,4 @@
 import React from 'react';
-import NavContentA from '../styles/elements/NavContentA';
-import NavContentP from '../styles/elements/NavContentP';
 import FadeAnimation from '../styles/elements/FadeAnimation';
 
 const sketchUrls = {
@@ -9,16 +7,15 @@ const sketchUrls = {
 
 function isEmpty(obj) {
   for (const key in obj) {
-    if (obj.hasOwnProperty(key)) { return false; }
+    if (obj.hasOwnProperty(key)) { return true; }
   }
-  return true;
+  return false;
 }
 
 const Sketches = () => (
-  
+
   <div>
-    {console.log(isEmpty(sketchUrls))}
-    { !isEmpty(sketchUrls)
+    { isEmpty(sketchUrls)
       ? (
         <ul>
           {
@@ -26,18 +23,24 @@ const Sketches = () => (
           <FadeAnimation
             key={url}
           >
-            <NavContentA
+            <a
               href={sketchUrls[url]}
               target="_blank"
               rel="noopener noreferrer"
             >
               {url}
-            </NavContentA>
+            </a>
           </FadeAnimation>
         ))
       }
         </ul>
-      ) : <NavContentP red> Check back soon </NavContentP>
+      ) : (
+        <FadeAnimation>
+          <p>
+            Check back soon
+          </p>
+        </FadeAnimation>
+      )
     }
   </div>
 );

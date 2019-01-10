@@ -1,6 +1,5 @@
 import React from 'react';
 import FadeAnimation from '../styles/elements/FadeAnimation';
-import NavContentA from '../styles/elements/NavContentA';
 
 const urls = {
   'Dental Site': 'https://sl-react-prod.herokuapp.com',
@@ -18,13 +17,13 @@ const Projects = () => (
           <FadeAnimation
             key={url}
           >
-            <NavContentA
+            <a
               href={urls[url]}
               target="_blank"
               rel="noopener noreferrer"
             >
               {url}
-            </NavContentA>
+            </a>
           </FadeAnimation>
         ))
       }

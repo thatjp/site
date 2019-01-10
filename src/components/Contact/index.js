@@ -1,5 +1,4 @@
 import React from 'react';
-import NavContentA from '../styles/elements/NavContentA';
 import FadeAnimation from '../styles/elements/FadeAnimation';
 
 const urls = {
@@ -16,13 +15,13 @@ const Contact = () => (
           <FadeAnimation
             key={url}
           >
-            <NavContentA
+            <a
               href={urls[url]}
               target="_blank"
               rel="noopener noreferrer"
             >
               {url}
-            </NavContentA>
+            </a>
           </FadeAnimation>
         ))
       }

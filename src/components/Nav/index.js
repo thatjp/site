@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TitleWrapper from '../styles/elements/TitleWrapper';
 import FadeAnimation from '../styles/elements/FadeAnimation';
-import NavContentA from '../styles/elements/NavContentA';
 
 const NavItemWrapper = styled.div`
   display: inline;
@@ -64,7 +63,7 @@ const Nav = (props) => {
         </TitleWrapper>
       </NavItemWrapper>
       <NavItemWrapper>
-        <NavContentA
+        <a
           href={require('../../assets/JP-Harris-resume-121318.pdf')}
           target="_blank"
           resume
@@ -72,7 +71,7 @@ const Nav = (props) => {
           <TitleWrapper>
             Resume
           </TitleWrapper>
-        </NavContentA>
+        </a>
       </NavItemWrapper>
     </FadeAnimation>
   );

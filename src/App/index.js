@@ -1,44 +1,15 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import Nav from '../components/Nav';
 import ContentWrapper from '../components/ContentWrapper';
-import '../reset.css';
-
-const Outer = styled.div`
-  display: grid;
-  margin: 30px;
-  position: relative;
-  /* * { outline: solid 0.25rem rgba(10, 10, 10, 0.5); } */
-  @media (min-width : 320px) and (max-width : 480px) {
-    margin: 15px;
-  }
-`;
-
-const Column = styled.div`
-  grid-column-start: 1;
-`;
-
-const Column2 = styled.div`
-  grid-column-start: 2;
-`;
-
-const Inner = styled.div`
-  width: 50%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  margin: 0;
-  position: absolute;
-  top: 30px;
-  left: 30%;
-  -ms-transform: translate(-30%, -30%);
-  transform: translate(-30%, -30%);
-  @media (min-width : 320px) and (max-width : 480px) {
-    width: 100%;
-    top: 25%;
-  }
-`;
+import {
+  GlobalStyle,
+  Inner,
+  Outer,
+  Column,
+  Column2,
+  theme,
+} from './styles';
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +26,6 @@ class App extends Component {
   }
 
   handleClick = (name) => {
-
     const isOpen = this.state.isOpen;
 
     let isClosedState = Object.assign({}, isOpen);
@@ -119,8 +89,9 @@ class App extends Component {
     const state = this.state;
 
     return (
-      <div>
+      <ThemeProvider theme={theme}>
         <Outer>
+          <GlobalStyle />
           <Inner>
             <Column>
               <Nav
@@ -140,7 +111,7 @@ class App extends Component {
             </Column2>
           </Inner>
         </Outer>
-      </div>
+      </ThemeProvider>
     );
   }
 }
