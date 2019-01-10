@@ -18,6 +18,6 @@ export default styled.div`
     color: black;
   }
   h2 {
-    display: inline-block;
+    /* display: inline-block; */
   }
 `;

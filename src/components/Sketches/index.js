@@ -23,13 +23,15 @@ const Sketches = () => (
           <FadeAnimation
             key={url}
           >
-            <a
-              href={sketchUrls[url]}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {url}
-            </a>
+            <li>
+              <a
+                href={sketchUrls[url]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {url}
+              </a>
+            </li>
           </FadeAnimation>
         ))
       }

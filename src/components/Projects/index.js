@@ -17,13 +17,15 @@ const Projects = () => (
           <FadeAnimation
             key={url}
           >
-            <a
-              href={urls[url]}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {url}
-            </a>
+            <li>
+              <a
+                href={urls[url]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {url}
+              </a>
+            </li>
           </FadeAnimation>
         ))
       }

@@ -125,6 +125,10 @@ const GlobalStyle = createGlobalStyle`
     outline: thin dotted;
     text-decoration: none;
   }
+
+  h2 {
+    font-family: 'Roboto Mono', monospace;
+  }
   
   a:active,
   a:hover {
@@ -337,40 +341,14 @@ const theme = {
 };
 
 const Outer = styled.div`
-  display: grid;
-  margin: 30px;
-  position: relative;
-  @media (min-width: 320px) and (max-width: 480px) {
-    margin: 15px;
-  }
-`;
-
-const Column = styled.div`
-  grid-column-start: 1;
-`;
-
-const Column2 = styled.div`
-  grid-column-start: 2;
 `;
 
 const Inner = styled.div`
-  width: 50%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  margin: 0;
-  position: absolute;
-  top: 30px;
-  left: 30%;
-  -ms-transform: translate(-30%, -30%);
-  transform: translate(-30%, -30%);
-  @media (min-width: 320px) and (max-width: 480px) {
-    width: 100%;
-    top: 25%;
-  }
+  display: flex;
+  justify-content: left;
+  margin: 100px 300px;
 `;
 
 export {
-  Inner, Outer, Column, Column2, GlobalStyle, theme,
+  Inner, Outer, GlobalStyle, theme,
 };

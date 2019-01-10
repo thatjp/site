@@ -29,33 +29,16 @@ const Nav = (props) => {
   return (
     <FadeAnimation>
       <NavStyles>
-        <div
-          onClick={() => showProjects('about')}
-        >
-          <h2>About</h2>
-        </div>
-        <div
-          onClick={() => showProjects('projects')}
-        >
-          Projects
-        </div>
-        <div
-          onClick={() => showProjects('sketches')}
-        >
-          Sketches
-        </div>
-        <div
-          onClick={() => showProjects('contact')}
-        >
-          Contact
-        </div>
+        <h2 onClick={() => showProjects('about')}>About</h2>
+        <h2 onClick={() => showProjects('projects')}>Projects</h2>
+        <h2 onClick={() => showProjects('sketches')}>Sketches</h2>
+        <h2 onClick={() => showProjects('contact')}>Contact</h2>
         <a
           href={require('../../assets/JP-Harris-resume-121318.pdf')}
           target="_blank"
-          resume
         >
           <div>
-            Resume
+            <h2>Resume</h2>
           </div>
         </a>
       </NavStyles>

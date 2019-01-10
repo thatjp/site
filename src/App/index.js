@@ -6,8 +6,6 @@ import {
   GlobalStyle,
   Inner,
   Outer,
-  Column,
-  Column2,
   theme,
 } from './styles';
 
@@ -93,7 +91,7 @@ class App extends Component {
         <Outer>
           <GlobalStyle />
           <Inner>
-            <Column>
+            <div>
               <Nav
                 openContent={this.openContent}
                 onClick={this.handleClick}
@@ -102,13 +100,13 @@ class App extends Component {
                 sketches={state.isOpen.sketches}
                 resume={state.isOpen.resume}
               />
-            </Column>
-            <Column2>
+            </div>
+            <div>
               <ContentWrapper
                 openContent={state.contentOpen}
                 isOpen={state.isOpen}
               />
-            </Column2>
+            </div>
           </Inner>
         </Outer>
       </ThemeProvider>
