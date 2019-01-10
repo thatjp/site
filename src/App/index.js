@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Nav from './components/Nav';
-import ContentWrapper from './components/ContentWrapper';
-import './reset.css';
+import Nav from '../components/Nav';
+import ContentWrapper from '../components/ContentWrapper';
+import '../reset.css';
 
 const Outer = styled.div`
   display: grid;
@@ -39,11 +39,6 @@ const Inner = styled.div`
     top: 25%;
   }
 `;
-
-const style = {
-  height: '15px',
-  color: 'red',
-};
 
 class App extends Component {
   constructor(props) {
@@ -114,14 +109,10 @@ class App extends Component {
   }
 
   openContent = () => {
-    const state = this.state;
+    const { state } = this.state;
     this.setState({
       contentOpen: !state.contentOpen,
     });
-  }
-
-  slowRender = () => {
-
   }
 
   render() {

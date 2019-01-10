@@ -1,7 +1,7 @@
 import React from 'react';
-import NavContentA from './styles/elements/NavContentA';
-import NavContentP from './styles/elements/NavContentP';
-import FadeAnimation from './styles/elements/FadeAnimation';
+import NavContentA from '../styles/elements/NavContentA';
+import NavContentP from '../styles/elements/NavContentP';
+import FadeAnimation from '../styles/elements/FadeAnimation';
 
 const sketchUrls = {
   // 'Threejs React Sketch': 'https://three-playground.netlify.com/',

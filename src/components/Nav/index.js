@@ -2,20 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import TitleWrapper from './styles/elements/TitleWrapper';
-import FadeAnimation from './styles/elements/FadeAnimation';
-import NavContentA from './styles/elements/NavContentA';
+import TitleWrapper from '../styles/elements/TitleWrapper';
+import FadeAnimation from '../styles/elements/FadeAnimation';
+import NavContentA from '../styles/elements/NavContentA';
 
 const NavItemWrapper = styled.div`
   display: inline;
 `;
-
-const style = {
-  marginRight: '5px',
-  height: '15px',
-  color: 'red',
-  display: 'inline-block',
-};
 
 const Nav = (props) => {
   const showProjects = (itemName) => {
@@ -72,7 +65,7 @@ const Nav = (props) => {
       </NavItemWrapper>
       <NavItemWrapper>
         <NavContentA
-          href={require('../assets/JP-Harris-resume-121318.pdf')}
+          href={require('../../assets/JP-Harris-resume-121318.pdf')}
           target="_blank"
           resume
         >

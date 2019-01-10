@@ -1,6 +1,6 @@
 import React from 'react';
-import NavContentA from './styles/elements/NavContentA';
-import FadeAnimation from './styles/elements/FadeAnimation';
+import NavContentA from '../styles/elements/NavContentA';
+import FadeAnimation from '../styles/elements/FadeAnimation';
 
 const urls = {
   github: 'https://github.com/thatjp',
