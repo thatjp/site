@@ -1,5 +1,5 @@
 import React from 'react';
-import FadeAnimation from '../styles/elements/FadeAnimation';
+import FadeAnimation from '../styles/FadeAnimation';
 
 const urls = {
   'Dental Site': 'https://sl-react-prod.herokuapp.com',

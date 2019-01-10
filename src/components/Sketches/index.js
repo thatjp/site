@@ -1,5 +1,5 @@
 import React from 'react';
-import FadeAnimation from '../styles/elements/FadeAnimation';
+import FadeAnimation from '../styles/FadeAnimation';
 
 const sketchUrls = {
   // 'Threejs React Sketch': 'https://three-playground.netlify.com/',

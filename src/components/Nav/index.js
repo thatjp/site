@@ -1,13 +1,8 @@
 /* eslint-disable global-require */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import TitleWrapper from '../styles/elements/TitleWrapper';
-import FadeAnimation from '../styles/elements/FadeAnimation';
-
-const NavItemWrapper = styled.div`
-  display: inline;
-`;
+import NavStyles from './styles';
+import FadeAnimation from '../styles/FadeAnimation';
 
 const Nav = (props) => {
   const showProjects = (itemName) => {
@@ -33,46 +28,37 @@ const Nav = (props) => {
 
   return (
     <FadeAnimation>
-      <NavItemWrapper>
-        <TitleWrapper
+      <NavStyles>
+        <div
           onClick={() => showProjects('about')}
         >
-        {/* <img src={require('../assets/arrow.svg')} alt="Here" style={style} /> */}
           <h2>About</h2>
-        </TitleWrapper>
-      </NavItemWrapper>
-      <NavItemWrapper>
-        <TitleWrapper
+        </div>
+        <div
           onClick={() => showProjects('projects')}
         >
           Projects
-        </TitleWrapper>
-      </NavItemWrapper>
-      <NavItemWrapper>
-        <TitleWrapper
+        </div>
+        <div
           onClick={() => showProjects('sketches')}
         >
           Sketches
-        </TitleWrapper>
-      </NavItemWrapper>
-      <NavItemWrapper>
-        <TitleWrapper
+        </div>
+        <div
           onClick={() => showProjects('contact')}
         >
           Contact
-        </TitleWrapper>
-      </NavItemWrapper>
-      <NavItemWrapper>
+        </div>
         <a
           href={require('../../assets/JP-Harris-resume-121318.pdf')}
           target="_blank"
           resume
         >
-          <TitleWrapper>
+          <div>
             Resume
-          </TitleWrapper>
+          </div>
         </a>
-      </NavItemWrapper>
+      </NavStyles>
     </FadeAnimation>
   );
 };
