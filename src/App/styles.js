@@ -328,6 +328,42 @@ const GlobalStyle = createGlobalStyle`
       color: #000;
       padding: 0.2em 0;
   }
+
+  li {
+    height: 20px;
+  }
+
+  li a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    padding-bottom: 2px;
+  }
+
+  li a:hover {
+    color: #000;
+  }
+
+  li a:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  li a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
 `;
 
 const theme = {
@@ -340,16 +376,17 @@ const theme = {
   bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
 };
 
-const Outer = styled.div`
-    width: 100%;
-`;
-
-const Inner = styled.div`
+const AppStyles = styled.div`
   display: flex;
   justify-content: left;
   margin: 10% 15%;
+  .line {
+      border-left: 1px solid black;
+  }
 `;
 
 export {
-  Inner, Outer, GlobalStyle, theme,
+  AppStyles,
+  GlobalStyle,
+  theme,
 };

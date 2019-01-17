@@ -6,7 +6,7 @@ const About = () => (
   <FadeAnimation>
     <AboutStyling>
       <p>
-        Hi I&apos;m JP. A creative front-end web developer with a background in art and design.
+        Hi I&apos;m JP. A creative web developer with a background in art and design.
       </p>
     </AboutStyling>
   </FadeAnimation>

@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 const NavStyles = styled.div`
   margin-right: 200px;
+  .arrow { 
+    width: 10px;
+  }
   h2 {
     transition: color 0.2s ease;
     color: grey;

@@ -1,5 +1,6 @@
 import React from 'react';
 import FadeAnimation from '../styles/FadeAnimation';
+import ContactStyles from './styles';
 
 const urls = {
   github: 'https://github.com/thatjp',
@@ -8,25 +9,27 @@ const urls = {
 };
 
 const Contact = () => (
-  <FadeAnimation>
+  <ContactStyles>
     <ul>
       {
         Object.keys(urls).map(url => (
-          <FadeAnimation
-            key={url}
-          >
-            <a
-              href={urls[url]}
-              target="_blank"
-              rel="noopener noreferrer"
+          <li>
+            <FadeAnimation
+              key={url}
             >
-              {url}
-            </a>
-          </FadeAnimation>
+              <a
+                href={urls[url]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {url}
+              </a>
+            </FadeAnimation>
+          </li>
         ))
       }
     </ul>
-  </FadeAnimation>
+  </ContactStyles>
 );
 
 export default Contact;

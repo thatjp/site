@@ -26,13 +26,39 @@ const Nav = (props) => {
     }
   };
 
+  const onNavHover = () => {
+    /*
+    --------------------------------------------------
+      the arrow should render without knowing whether the nav item is currently open or not
+      onMouseEnter the div id is found and the arrow is appending inline to the title
+      if the item is clicked the arrow reverses the Nav closes and the new menu slides 
+      in from the right;
+    --------------------------------------------------
+    */
+    return (
+      <div className="arrow">
+        <img src={require('../../assets/arrow.svg')} alt="here" />
+      </div>
+    );
+  };
+
   return (
     <FadeAnimation>
       <NavStyles>
-        <h2 onClick={() => showProjects('about')}>About</h2>
-        <h2 onClick={() => showProjects('projects')}>Projects</h2>
-        <h2 onClick={() => showProjects('sketches')}>Sketches</h2>
-        <h2 onClick={() => showProjects('contact')}>Contact</h2>
+        <div 
+          onMouseEnter={() => onNavHover()}
+        >
+          <h2 onClick={() => showProjects('about')}>About</h2>
+        </div>
+        <div>
+          <h2 onClick={() => showProjects('projects')}>Projects</h2>
+        </div>
+        <div>
+          <h2 onClick={() => showProjects('sketches')}>Sketches</h2>
+        </div>
+        <div>
+          <h2 onClick={() => showProjects('contact')}>Contact</h2>
+        </div>
         <a
           href={require('../../assets/JP-Harris-resume-121318.pdf')}
           target="_blank"

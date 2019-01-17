@@ -4,8 +4,7 @@ import Nav from '../components/Nav';
 import ContentWrapper from '../components/ContentWrapper';
 import {
   GlobalStyle,
-  Inner,
-  Outer,
+  AppStyles,
   theme,
 } from './styles';
 
@@ -88,27 +87,25 @@ class App extends Component {
 
     return (
       <ThemeProvider theme={theme}>
-        <Outer>
+        <AppStyles>
           <GlobalStyle />
-          <Inner>
-            <div>
-              <Nav
-                openContent={this.openContent}
-                onClick={this.handleClick}
-                about={state.isOpen.about}
-                projects={state.isOpen.projects}
-                sketches={state.isOpen.sketches}
-                resume={state.isOpen.resume}
-              />
-            </div>
-            <div>
-              <ContentWrapper
-                openContent={state.contentOpen}
-                isOpen={state.isOpen}
-              />
-            </div>
-          </Inner>
-        </Outer>
+          <div>
+            <Nav
+              openContent={this.openContent}
+              onClick={this.handleClick}
+              about={state.isOpen.about}
+              projects={state.isOpen.projects}
+              sketches={state.isOpen.sketches}
+              resume={state.isOpen.resume}
+            />
+          </div>
+          <div>
+            <ContentWrapper
+              openContent={state.contentOpen}
+              isOpen={state.isOpen}
+            />
+          </div>
+        </AppStyles>
       </ThemeProvider>
     );
   }
