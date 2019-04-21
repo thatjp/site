@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutStyling from './styles'
+import AboutStyling from './styles';
 import FadeAnimation from '../styles/FadeAnimation';
 
 const About = () => (

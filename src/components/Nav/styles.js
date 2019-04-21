@@ -2,9 +2,17 @@ import styled from 'styled-components';
 
 const NavStyles = styled.div`
   margin-right: 200px;
+  
+  ul li {
+    width: 200px;
+  }
+
   .arrow { 
     width: 10px;
+    float: left;
+    margin: 3px 0px;
   }
+
   h2 {
     transition: color 0.2s ease;
     color: grey;
@@ -17,6 +25,7 @@ const NavStyles = styled.div`
     user-select: none; 
     font-size: 1rem;
     padding: 5px; 
+    margin-left: 10px;
     :hover {
       color: black;
     }
