@@ -377,7 +377,7 @@ const theme = {
 };
 
 const AppStyles = styled.div`
-  display: flex;
+  /* display: flex; */
   justify-content: left;
   margin: 10% 15%;
   .line {

@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   handleClick = (name) => {
-    const isOpen = this.state.isOpen;
+    const { isOpen } = this.state;
 
     let isClosedState = Object.assign({}, isOpen);
 
@@ -83,28 +83,24 @@ class App extends Component {
   }
 
   render() {
-    const state = this.state;
+    const { isOpen, contentOpen } = this.state;
 
     return (
       <ThemeProvider theme={theme}>
         <AppStyles>
           <GlobalStyle />
-          <div>
-            <Nav
-              openContent={this.openContent}
-              onClick={this.handleClick}
-              about={state.isOpen.about}
-              projects={state.isOpen.projects}
-              sketches={state.isOpen.sketches}
-              resume={state.isOpen.resume}
-            />
-          </div>
-          <div>
-            <ContentWrapper
-              openContent={state.contentOpen}
-              isOpen={state.isOpen}
-            />
-          </div>
+          <Nav
+            openContent={this.openContent}
+            onClick={this.handleClick}
+            about={isOpen.about}
+            projects={isOpen.projects}
+            sketches={isOpen.sketches}
+            resume={isOpen.resume}
+          />
+          <ContentWrapper
+            openContent={contentOpen}
+            isOpen={isOpen}
+          />
         </AppStyles>
       </ThemeProvider>
     );

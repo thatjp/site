@@ -9,59 +9,46 @@ class Nav extends React.Component {
     super(props);
 
     this.state = {
-      hover: false,
+      currentHover: '',
     };
   }
 
+
+  showProjects = (itemName) => {
+    const { onClick } = this.props;
+    
+    switch (itemName) {
+      case 'projects':
+        onClick('projects');
+        break;
+      case 'about':
+        onClick('about');
+        break;
+      case 'sketches':
+        onClick('sketches');
+        break;
+      case 'contact':
+        onClick('contact');
+        break;
+      default:
+        break;
+    }
+  };
+
+  onNavHover = (name) => {
+    this.setState({
+      currentHover: name,
+    });
+  };
+
+  onNavExit = () => {
+    this.setState({
+      currentHover: '',
+    });
+  };
+
   render() {
-    const { props } = this;
-    const { hover } = this.state;
-
-    const showProjects = (itemName) => {
-      props.onClick('projects');
-      switch (itemName) {
-        case 'projects':
-          props.onClick('projects');
-          break;
-        case 'about':
-          props.onClick('about');
-          break;
-        case 'sketches':
-          props.onClick('sketches');
-          break;
-        case 'contact':
-          props.onClick('contact');
-          break;
-        default:
-          break;
-      }
-    };
-
-    const onNavHover = () => {
-      /*
-      --------------------------------------------------
-        the arrow should render without knowing whether the nav item is currently open or not
-        onMouseEnter the div id is found and the arrow is appending inline to the title
-        if the item is clicked the arrow reverses the Nav closes and the new menu slides
-        in from the right;
-      --------------------------------------------------
-      */
-      this.setState({
-        hover: true,
-      });
-
-      // return (
-      //   <div className="arrow">
-      //     <img src={require("../../assets/arrow.svg")} alt="here" />
-      //   </div>
-      // );
-    };
-
-    const onNavExit = () => {
-      this.setState({
-        hover: false,
-      });
-    };
+    const { currentHover } = this.state;
 
     return (
       <FadeAnimation>
@@ -69,10 +56,10 @@ class Nav extends React.Component {
           <ul>
             <li>
               <div
-                onMouseEnter={() => onNavHover()}
-                onMouseLeave={() => onNavExit()}
+                onMouseEnter={() => this.onNavHover('about')}
+                onMouseLeave={() => this.onNavExit()}
               >
-                { hover
+                { currentHover === 'about'
                 && (
                 <FadeAnimation>
                   <div className="arrow">
@@ -80,31 +67,77 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <h2 onClick={() => showProjects('about')}>About</h2>
+                <h2 onClick={() => this.showProjects('about')}>About</h2>
               </div>
             </li>
             <li>
-              <div>
-                <h2 onClick={() => showProjects('projects')}>Projects</h2>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h2 onClick={() => showProjects('sketches')}>Sketches</h2>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h2 onClick={() => showProjects('contact')}>Contact</h2>
-              </div>
-            </li>
-            <li>
-              <a
-                href={require('../../assets/JP-Harris-resume-121318.pdf')}
-                target="_blank"
+              <div
+                onMouseEnter={() => this.onNavHover('projects')}
+                onMouseLeave={() => this.onNavExit()}
               >
-                <h2>Resume</h2>
-              </a>
+                { currentHover === 'projects'
+                && (
+                <FadeAnimation>
+                  <div className="arrow">
+                    <img src={require('../../assets/arrow.svg')} alt="here" />
+                  </div>
+                </FadeAnimation>
+                )}
+                <h2 onClick={() => this.showProjects('projects')}>Projects</h2>
+              </div>
+            </li>
+            <li>
+              <div
+                onMouseEnter={() => this.onNavHover('sketches')}
+                onMouseLeave={() => this.onNavExit()}
+              >
+                { currentHover === 'sketches'
+                && (
+                <FadeAnimation>
+                  <div className="arrow">
+                    <img src={require('../../assets/arrow.svg')} alt="here" />
+                  </div>
+                </FadeAnimation>
+                )}
+                <h2 onClick={() => this.showProjects('sketches')}>Sketches</h2>
+              </div>
+            </li>
+            <li>
+              <div
+                onMouseEnter={() => this.onNavHover('contact')}
+                onMouseLeave={() => this.onNavExit()}
+              >
+                { currentHover === 'contact'
+                && (
+                <FadeAnimation>
+                  <div className="arrow">
+                    <img src={require('../../assets/arrow.svg')} alt="here" />
+                  </div>
+                </FadeAnimation>
+                )}
+                <h2 onClick={() => this.showProjects('contact')}>Contact</h2>
+              </div>
+            </li>
+            <li>
+              <div
+                onMouseEnter={() => this.onNavHover('resume')}
+                onMouseLeave={() => this.onNavExit()}
+              >
+                <a
+                  href={require('../../assets/JP-Harris-resume-121318.pdf')}
+                  target="_blank"
+                >
+                  { currentHover === 'resume'
+                  && (
+                  <FadeAnimation>
+                    <div className="arrow">
+                      <img src={require('../../assets/arrow.svg')} alt="here" />
+                    </div>
+                  </FadeAnimation>
+                  )}
+                  <h2>Resume</h2>
+                </a>
+              </div>
             </li>
           </ul>
         </NavStyles>

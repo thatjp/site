@@ -4,6 +4,7 @@ import Projects from '../Projects';
 import Sketches from '../Sketches';
 import Contact from '../Contact';
 import About from '../About';
+import ContentStyles from './styles';
 
 const ContentWrapper = (props) => {
   const isOpen = obj => Object.keys(obj).find(key => obj[key] === true);
@@ -24,9 +25,9 @@ const ContentWrapper = (props) => {
   };
 
   return (
-    <div>
+    <ContentStyles>
       {renderContent()}
-    </div>
+    </ContentStyles>
   );
 };
 

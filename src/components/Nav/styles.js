@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const NavStyles = styled.div`
-  margin-right: 200px;
+  /* width: 200px; */
   
   ul li {
     width: 200px;
