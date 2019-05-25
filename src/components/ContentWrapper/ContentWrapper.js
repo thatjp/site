@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Projects from '../Projects';
-import Sketches from '../Sketches';
-import Contact from '../Contact';
-import About from '../About';
+import Projects from '../Projects/Projects';
+import Sketches from '../Sketches/Sketches';
+import Contact from '../Contact/Contact';
+import About from '../About/About';
 import ContentStyles from './styles';
 
 const ContentWrapper = (props) => {

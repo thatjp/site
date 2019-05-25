@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
   
   body {
   	line-height: 1;
+    background-color: ${props => (props.nightTime ? '#000' : '#fff')};
   }
   
   ol, ul {
@@ -107,7 +108,7 @@ const GlobalStyle = createGlobalStyle`
     display: inline;
     font-family: 'Roboto Mono', monospace;
     font-size: 12px;
-    color: ${props => (props.red ? 'red' : 'black')};
+    color: ${props => (props.nightTime ? '#fff' : '#000')};
     -webkit-user-select: none; /* Chrome/Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+ */
@@ -119,6 +120,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto Mono', monospace;
     font-size: 12px;
     outline: 0;
+    color: ${props => (props.nightTime ? '#fff' : '#000')};
   }
  
   a:focus {
@@ -128,11 +130,13 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-family: 'Roboto Mono', monospace;
+    color: ${props => (props.nightTime ? '#fff' : '#000')};
   }
   
   a:active,
   a:hover {
       outline: 0;
+      color: ${props => (props.nightTime ? '#fff' : '#000')};
   }
   
   img {
@@ -377,16 +381,14 @@ const theme = {
 };
 
 const AppStyles = styled.div`
-  /* display: flex; */
-  justify-content: left;
-  margin: 10% 15%;
-  .line {
-      border-left: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin: 200px auto;
+  max-width: 80%;
+  .center {
+    display: inline-block;
+    width: 1000px;
   }
 `;
 
-export {
-  AppStyles,
-  GlobalStyle,
-  theme,
-};
+export { AppStyles, GlobalStyle, theme };

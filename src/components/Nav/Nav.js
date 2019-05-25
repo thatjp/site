@@ -49,10 +49,11 @@ class Nav extends React.Component {
 
   render() {
     const { currentHover } = this.state;
+    const { nightTime } = this.props;
 
     return (
       <FadeAnimation>
-        <NavStyles>
+        <NavStyles nightTime >
           <ul>
             <li>
               <div
