@@ -17,7 +17,7 @@ class ScrollBar extends Component {
                 <h2>{project.startDate}</h2>
                 <button
                   type="button"
-                  name="goldi"
+                  name={project.name}
                   onClick={onTimeLineClick()}
                 >
                   {project.name}

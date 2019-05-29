@@ -8,8 +8,6 @@ import ScrollBar from '../components/ScrollBar/ScrollBar';
 import { GlobalStyle, AppStyles, theme } from './styles';
 import projects from './timeLineData';
 
-const ContentDescriptionText = 'CONTENT DESCRIPTION TEXT CONTENT DESCRIPTION TEXT CONTENT DESCRIPTION TEXT CONTENT DESCRIPTION TEXT CONTENT DESCRIPTION TEXT CONTENT DESCRIPTION TEXT CONTENT DESCRIPTION TEXT';
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -60,7 +58,7 @@ class App extends Component {
       job.name === e.target.name));
 
     this.setState({
-      timeLineContent: item,
+      timeLineContent: item[0],
     });
   }
 
@@ -96,7 +94,6 @@ class App extends Component {
             />
             <TimeLineContent
               timeLineContent={this.renderTimeLineConent()}
-              descriptionText={ContentDescriptionText}
             />
           </div>
           <div className="section right">

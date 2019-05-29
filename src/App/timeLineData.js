@@ -19,6 +19,15 @@ const projects = {
       startDate: 'jan 2019',
       endDate: 'current',
     },
+    {
+      id: 3,
+      name: 'ITI',
+      description: 'Frontend Developer Position at Infrastructure Technologies Inc',
+      type: 'work',
+      location: 'New Haven, CT',
+      startDate: 'May 2012',
+      endDate: 'Jan 2017',
+    },
   ],
 };
 

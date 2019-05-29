@@ -218,6 +218,13 @@ const GlobalStyle = createGlobalStyle`
       -webkit-appearance: button; /* 2 */
       cursor: pointer; /* 3 */
       *overflow: visible;  /* 4 */
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
   }
   
   /**
@@ -383,7 +390,9 @@ const theme = {
 const AppStyles = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 200px auto;
+  margin: 150px auto;
+  /* width: 100vw; */
+  height: 100vh;
   max-width: 80%;
   .center {
     display: inline-block;
