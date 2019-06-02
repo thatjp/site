@@ -391,8 +391,7 @@ const AppStyles = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 150px auto;
-  /* width: 100vw; */
-  height: 100vh;
+  max-height: 1000px;
   max-width: 80%;
   .center {
     display: inline-block;

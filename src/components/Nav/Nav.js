@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NavStyles from './styles';
 import FadeAnimation from '../styles/FadeAnimation';
+import NavArrowSvg from '../styles/svg/NavArrow';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class Nav extends React.Component {
       currentHover: '',
     };
   }
-
 
   showProjects = (itemName) => {
     const { onClick } = this.props;
@@ -53,7 +53,7 @@ class Nav extends React.Component {
 
     return (
       <FadeAnimation>
-        <NavStyles nightTime >
+        <NavStyles nightTime>
           <ul>
             <li>
               <div
@@ -64,7 +64,7 @@ class Nav extends React.Component {
                 && (
                 <FadeAnimation>
                   <div className="arrow">
-                    <img src={require('../../assets/arrow.svg')} alt="here" />
+                    <NavArrowSvg nightTime={nightTime} />
                   </div>
                 </FadeAnimation>
                 )}
@@ -80,27 +80,11 @@ class Nav extends React.Component {
                 && (
                 <FadeAnimation>
                   <div className="arrow">
-                    <img src={require('../../assets/arrow.svg')} alt="here" />
+                    <NavArrowSvg nightTime={nightTime} />
                   </div>
                 </FadeAnimation>
                 )}
                 <h2 onClick={() => this.showProjects('projects')}>Projects</h2>
-              </div>
-            </li>
-            <li>
-              <div
-                onMouseEnter={() => this.onNavHover('sketches')}
-                onMouseLeave={() => this.onNavExit()}
-              >
-                { currentHover === 'sketches'
-                && (
-                <FadeAnimation>
-                  <div className="arrow">
-                    <img src={require('../../assets/arrow.svg')} alt="here" />
-                  </div>
-                </FadeAnimation>
-                )}
-                <h2 onClick={() => this.showProjects('sketches')}>Sketches</h2>
               </div>
             </li>
             <li>
@@ -112,7 +96,7 @@ class Nav extends React.Component {
                 && (
                 <FadeAnimation>
                   <div className="arrow">
-                    <img src={require('../../assets/arrow.svg')} alt="here" />
+                    <NavArrowSvg nightTime={nightTime} />
                   </div>
                 </FadeAnimation>
                 )}
@@ -132,7 +116,7 @@ class Nav extends React.Component {
                   && (
                   <FadeAnimation>
                     <div className="arrow">
-                      <img src={require('../../assets/arrow.svg')} alt="here" />
+                      <NavArrowSvg nightTime={nightTime} />
                     </div>
                   </FadeAnimation>
                   )}
@@ -149,6 +133,7 @@ class Nav extends React.Component {
 
 Nav.propTypes = {
   onClick: PropTypes.func,
+  nightTime: PropTypes.bool.isRequired,
 };
 
 Nav.defaultProps = {

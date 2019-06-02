@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ScrollBarStyles = styled.div`
-   height: 70%;
+   height: 100%;
    display: inline-block;
    float: left;
    margin-right: 100px;
@@ -18,10 +18,10 @@ const ScrollBarStyles = styled.div`
    }
 
    .line {
-      height: 70%;
+      height: 90%;
       display: inline-block;
       overflow: scroll;
-      border-left: 2px solid ${props => (props.nightTime ? '#fff' : '#000')};
+      border-left: 1px solid ${props => (props.nightTime ? '#fff' : '#000')};
       ::-webkit-scrollbar { 
          display: none; 
       }
@@ -29,7 +29,7 @@ const ScrollBarStyles = styled.div`
    
    .timeline-content {
       margin-top: 400px;
-      border-bottom: 2px solid ${props => (props.nightTime ? '#fff' : '#000')};
+      border-bottom: 1px solid ${props => (props.nightTime ? '#fff' : '#000')};
    }
    .timeline-content > h2,button{
       margin: 5px 20px 15px;
