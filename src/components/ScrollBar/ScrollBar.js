@@ -5,14 +5,14 @@ import ScrollBarStyles from './styles';
 // eslint-disable-next-line react/prefer-stateless-function
 class ScrollBar extends Component {
   render() {
-    const { onTimeLineClick, nightTime, projects } = this.props;
+    const { onTimeLineClick, nightTime, projects, title } = this.props;
 
     return (
       <ScrollBarStyles nightTime={nightTime}>
-        <h2 className="title">ScrollBar</h2>
+        <h2 className="title">{title}</h2>
         <div className="line">
           <div className="timeline">
-            {projects.work.map((project, idx) => (
+            {projects.map((project, idx) => (
               <div className="timeline-content">
                 <h2>{project.startDate}</h2>
                 <button
@@ -35,6 +35,7 @@ ScrollBar.propTypes = {
   onTimeLineClick: PropTypes.func.isRequired,
   nightTime: PropTypes.bool.isRequired,
   projects: PropTypes.object.isRequired,
+  title: PropTypes.string,
 };
 
 export default ScrollBar;

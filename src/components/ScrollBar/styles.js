@@ -18,7 +18,7 @@ const ScrollBarStyles = styled.div`
    }
 
    .line {
-      height: 90%;
+      height: 400px;
       display: inline-block;
       overflow: scroll;
       border-left: 1px solid ${props => (props.nightTime ? '#fff' : '#000')};

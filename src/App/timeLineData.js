@@ -1,6 +1,6 @@
-const projects = {
-  work:
-  [
+// eslint-disable-next-line import/prefer-default-export
+export const projects = {
+  work: [
     {
       id: 1,
       name: 'goldi',
@@ -22,15 +22,15 @@ const projects = {
     {
       id: 3,
       name: 'ITI',
-      description: 'Frontend Developer Position at Infrastructure Technologies Inc',
+      description:
+        'Frontend Developer Position at Infrastructure Technologies Inc',
       type: 'work',
       location: 'New Haven, CT',
       startDate: 'May 2012',
       endDate: 'Jan 2017',
     },
   ],
-  projects:
-  [
+  projects: [
     {
       id: 13,
       name: 'Mainline',
@@ -51,8 +51,9 @@ const projects = {
     },
     {
       id: 33,
-      name: 'ITI',
-      description: 'Frontend Developer Position at Infrastructure Technologies Inc',
+      name: 'SmileLounge',
+      description:
+        'rethinking of dental procedures',
       type: 'work',
       location: 'New Haven, CT',
       startDate: 'May 2012',
@@ -60,5 +61,3 @@ const projects = {
     },
   ],
 };
-
-export default projects;

@@ -388,9 +388,10 @@ const theme = {
 };
 
 const AppStyles = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
-  margin: 150px auto;
+  margin: 100px auto;
   max-height: 1000px;
   max-width: 80%;
   .center {

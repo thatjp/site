@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const NavStyles = styled.div`
   text-align: right;
   .arrow {
     width: 10px;
     float: left;
-    margin: 3px 0px;
+    margin: 6px 0px;
     color: ${props => (props.nightTime ? '#fff' : '#000')};
   }
 

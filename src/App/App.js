@@ -6,13 +6,12 @@ import About from '../components/About/About';
 import TimeLineContent from '../components/TimeLineContent/TimeLineContent';
 import ScrollBar from '../components/ScrollBar/ScrollBar';
 import { GlobalStyle, AppStyles, theme } from './styles';
-import projects from './timeLineData';
+import { projects } from './timeLineData';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      contentOpen: false,
       isNightColor: true,
       isOpen: {
         projects: false,
@@ -21,24 +20,17 @@ class App extends Component {
         resume: false,
       },
       timeLineContent: null,
+      isProjects: false,
     };
   }
 
   renderTimeLineConent = () => {
     const { timeLineContent } = this.state;
-
     if (timeLineContent === null) {
       return projects.work[0];
     }
     return timeLineContent;
   }
-
-  openContent = () => {
-    const { state } = this.state;
-    this.setState({
-      contentOpen: !state.contentOpen,
-    });
-  };
 
   handleColorShiftClick = (isNightTime) => {
     if (isNightTime) {
@@ -54,18 +46,33 @@ class App extends Component {
 
   handleTimeLineClick = (e) => {
     e.preventDefault();
-    const item = projects.work.filter(job => (
-      job.name === e.target.name));
+    const { isProjects } = this.state;
+    let item;
+
+    if (isProjects) {
+      item = projects.projects.filter(project => (
+        project.name === e.target.name));
+    } else {
+      item = projects.work.filter(job => (
+        job.name === e.target.name));
+    }
 
     this.setState({
       timeLineContent: item[0],
     });
   }
 
+  handleProjectsClick = () => {
+    const { isProjects } = this.state;
+    this.setState({
+      isProjects: !isProjects,
+    });
+  };
+
   render() {
     const {
       isOpen,
-      contentOpen,
+      isProjects,
       isNightColor,
     } = this.state;
 
@@ -84,13 +91,15 @@ class App extends Component {
               sketches={isOpen.sketches}
               resume={isOpen.resume}
               nightTime={isNightColor}
+              handleProjectsClick={() => this.handleProjectsClick}
             />
           </div>
           <div className="section center">
             <ScrollBar
+              title={isProjects ? 'projects' : 'work'}
               onTimeLineClick={() => this.handleTimeLineClick}
               nightTime={isNightColor}
-              projects={projects}
+              projects={isProjects ? projects.projects : projects.work}
             />
             <TimeLineContent
               timeLineContent={this.renderTimeLineConent()}

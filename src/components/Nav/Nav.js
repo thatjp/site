@@ -16,7 +16,7 @@ class Nav extends React.Component {
 
   showProjects = (itemName) => {
     const { onClick } = this.props;
-    
+
     switch (itemName) {
       case 'projects':
         onClick('projects');
@@ -49,7 +49,7 @@ class Nav extends React.Component {
 
   render() {
     const { currentHover } = this.state;
-    const { nightTime } = this.props;
+    const { nightTime, handleProjectsClick } = this.props;
 
     return (
       <FadeAnimation>
@@ -73,6 +73,22 @@ class Nav extends React.Component {
             </li>
             <li>
               <div
+                onMouseEnter={() => this.onNavHover('work')}
+                onMouseLeave={() => this.onNavExit()}
+              >
+                { currentHover === 'work'
+                && (
+                <FadeAnimation>
+                  <div className="arrow">
+                    <NavArrowSvg nightTime={nightTime} />
+                  </div>
+                </FadeAnimation>
+                )}
+                <h2 onClick={handleProjectsClick()}>Work</h2>
+              </div>
+            </li>
+            <li>
+              <div
                 onMouseEnter={() => this.onNavHover('projects')}
                 onMouseLeave={() => this.onNavExit()}
               >
@@ -84,7 +100,7 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <h2 onClick={() => this.showProjects('projects')}>Projects</h2>
+                <h2 onClick={handleProjectsClick()}>Projects</h2>
               </div>
             </li>
             <li>
@@ -100,7 +116,7 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <h2 onClick={() => this.showProjects('contact')}>Contact</h2>
+                <h2>Contact</h2>
               </div>
             </li>
             <li>
@@ -110,7 +126,6 @@ class Nav extends React.Component {
               >
                 <a
                   href={require('../../assets/JP-Harris-resume-121318.pdf')}
-                  target="_blank"
                 >
                   { currentHover === 'resume'
                   && (
