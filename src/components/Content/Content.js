@@ -5,6 +5,9 @@ import ContentStyles from './styles';
 const Content = ({ content }) => (
   <ContentStyles>
     <h2>{content}</h2>
+    <div>
+      <img src="../../assets/logo_gradient_tm.svg" alt="" />
+    </div>
   </ContentStyles>
 );
 

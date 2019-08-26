@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavArrowSvg = ({ nightTime }) => {
+const NavArrowSvg = ({ nightTime, isScrollBarArrow }) => {
   if (nightTime) {
     return (
       <svg

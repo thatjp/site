@@ -49,7 +49,12 @@ class Nav extends React.Component {
 
   render() {
     const { currentHover } = this.state;
-    const { nightTime, handleProjectsClick } = this.props;
+    const {
+      nightTime,
+      handleProjectsClick,
+      handleAboutClick,
+      handleContactClick,
+    } = this.props;
 
     return (
       <FadeAnimation>
@@ -68,7 +73,7 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <h2 onClick={() => this.showProjects('about')}>About</h2>
+                <h2 onClick={handleAboutClick()}>About</h2>
               </div>
             </li>
             <li>
@@ -84,7 +89,9 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <h2 onClick={handleProjectsClick()}>Work</h2>
+                <button name="work" onClick={handleProjectsClick()}>
+                  <h2>Work</h2>
+                </button>
               </div>
             </li>
             <li>
@@ -116,7 +123,7 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <h2>Contact</h2>
+                <h2 onClick={handleContactClick()}>Contact</h2>
               </div>
             </li>
             <li>

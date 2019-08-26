@@ -8,7 +8,7 @@ import Content from '../Content/Content';
 const TimeLineContent = ({ timeLineContent }) => {
   return (
     <TimeLineContentStyles>
-      <ContentDescription descriptionText={timeLineContent.description} />
+      <ContentDescription descriptionText={timeLineContent.description} responsibilities={timeLineContent.responsibilities} />
       <Content content={timeLineContent.name} />
     </TimeLineContentStyles>
   );

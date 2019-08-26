@@ -4,7 +4,6 @@ const ScrollBarStyles = styled.div`
    height: 100%;
    display: inline-block;
    float: left;
-   margin-right: 100px;
    overflow: hidden;
 
    button {

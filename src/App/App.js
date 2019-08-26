@@ -3,8 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import Nav from '../components/Nav/Nav';
 import ColorShift from '../components/ColorShift/ColorShift';
 import About from '../components/About/About';
-import TimeLineContent from '../components/TimeLineContent/TimeLineContent';
-import ScrollBar from '../components/ScrollBar/ScrollBar';
+import Center from '../components/Center/Center';
 import { GlobalStyle, AppStyles, theme } from './styles';
 import { projects } from './timeLineData';
 
@@ -21,16 +20,19 @@ class App extends Component {
       },
       timeLineContent: null,
       isProjects: false,
+      isAbout: false,
+      isContact: false,
+      navItem: null,
     };
   }
 
-  renderTimeLineConent = () => {
-    const { timeLineContent } = this.state;
-    if (timeLineContent === null) {
-      return projects.work[0];
-    }
-    return timeLineContent;
-  }
+  // renderTimeLineConent = () => {
+  //   const { timeLineContent } = this.state;
+  //   if (timeLineContent === null) {
+  //     return projects.work[0];
+  //   }
+  //   return timeLineContent;
+  // }
 
   handleColorShiftClick = (isNightTime) => {
     if (isNightTime) {
@@ -69,13 +71,49 @@ class App extends Component {
     });
   };
 
+  handleAboutClick = () => {
+    const { isAbout } = this.state;
+    this.setState({
+      isAbout: !isAbout,
+    });
+  };
+
+  handleContactClick = () => {
+    const { isContact } = this.state;
+    this.setState({
+      isContact: !isContact,
+    });
+  };
+
+  handleNavClick = (e) => {
+    console.log('e', e.target.innerHTML);
+    this.setState({
+      navItem: e.target.innerHTML,
+    });
+  }
+
+  renderTimeline = (projectsData) => {
+    const { navItem } = this.state;
+
+    switch (navItem) {
+      case 'Projects':
+        return projectsData.projects;
+      case 'Work':
+        return projectsData.work;
+      default:
+        return null;
+    }
+  };
+
   render() {
     const {
       isOpen,
       isProjects,
       isNightColor,
+      isAbout,
+      isContact,
+      navItem,
     } = this.state;
-
     return (
       <ThemeProvider theme={theme}>
         <AppStyles>
@@ -92,17 +130,17 @@ class App extends Component {
               resume={isOpen.resume}
               nightTime={isNightColor}
               handleProjectsClick={() => this.handleProjectsClick}
+              handleAboutClick={() => this.handleAboutClick}
+              handleContactClick={() => this.handleContactClick}
             />
           </div>
-          <div className="section center">
-            <ScrollBar
-              title={isProjects ? 'projects' : 'work'}
-              onTimeLineClick={() => this.handleTimeLineClick}
-              nightTime={isNightColor}
-              projects={isProjects ? projects.projects : projects.work}
-            />
-            <TimeLineContent
-              timeLineContent={this.renderTimeLineConent()}
+          <div className="section left">
+            <Center
+              isAbout={isAbout}
+              isContact={isContact}
+              isProjects={isProjects}
+              renderTimeline={() => this.renderTimeline()}
+              navItem={navItem}
             />
           </div>
           <div className="section right">
