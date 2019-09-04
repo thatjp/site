@@ -54,11 +54,12 @@ class Nav extends React.Component {
       handleProjectsClick,
       handleAboutClick,
       handleContactClick,
+      isMobile
     } = this.props;
 
     return (
       <FadeAnimation>
-        <NavStyles nightTime>
+        <NavStyles nightTime isMobile={isMobile}>
           <ul>
             <li>
               <div

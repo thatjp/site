@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 const NavStyles = styled.div`
   text-align: right;
+
+  li {
+    display: ${props => (props.isMobile ? 'inline-block' : 'block')}
+  }
+  
   .arrow {
     width: 10px;
     float: left;
