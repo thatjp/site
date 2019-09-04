@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
+import isMobile from 'ismobilejs';
 import Nav from '../components/Nav/Nav';
 import ColorShift from '../components/ColorShift/ColorShift';
 import About from '../components/About/About';
 import Center from '../components/Center/Center';
 import { GlobalStyle, AppStyles, theme } from './styles';
-import { projects } from './timeLineData';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isNightColor: true,
       isOpen: {
         projects: false,
         sketches: false,
         about: false,
         resume: false,
       },
-      timeLineContent: null,
+      isNightColor: true,
+      userAgent: null,
       isProjects: false,
       isAbout: false,
       isContact: false,
@@ -26,13 +26,12 @@ class App extends Component {
     };
   }
 
-  // renderTimeLineConent = () => {
-  //   const { timeLineContent } = this.state;
-  //   if (timeLineContent === null) {
-  //     return projects.work[0];
-  //   }
-  //   return timeLineContent;
-  // }
+  componentDidMount() {
+    const userAgent = navigator.userAgent;
+    this.setState({
+      userAgent,
+    });
+  }
 
   handleColorShiftClick = (isNightTime) => {
     if (isNightTime) {
@@ -46,23 +45,23 @@ class App extends Component {
     }
   }
 
-  handleTimeLineClick = (e) => {
-    e.preventDefault();
-    const { isProjects } = this.state;
-    let item;
+  // handleTimeLineClick = (e) => {
+  //   e.preventDefault();
+  //   const { isProjects } = this.state;
+  //   let item;
 
-    if (isProjects) {
-      item = projects.projects.filter(project => (
-        project.name === e.target.name));
-    } else {
-      item = projects.work.filter(job => (
-        job.name === e.target.name));
-    }
+  //   if (isProjects) {
+  //     item = projects.projects.filter(project => (
+  //       project.name === e.target.name));
+  //   } else {
+  //     item = projects.work.filter(job => (
+  //       job.name === e.target.name));
+  //   }
 
-    this.setState({
-      timeLineContent: item[0],
-    });
-  }
+  //   this.setState({
+  //     timeLineContent: item[0],
+  //   });
+  // }
 
   handleProjectsClick = () => {
     const { isProjects } = this.state;
@@ -86,7 +85,6 @@ class App extends Component {
   };
 
   handleNavClick = (e) => {
-    console.log('e', e.target.innerHTML);
     this.setState({
       navItem: e.target.innerHTML,
     });
@@ -105,6 +103,10 @@ class App extends Component {
     }
   };
 
+  detectMobile = (userAgent) => (
+    isMobile(userAgent).any
+  );
+
   render() {
     const {
       isOpen,
@@ -113,7 +115,9 @@ class App extends Component {
       isAbout,
       isContact,
       navItem,
+      userAgent,
     } = this.state;
+
     return (
       <ThemeProvider theme={theme}>
         <AppStyles>
@@ -132,15 +136,18 @@ class App extends Component {
               handleProjectsClick={() => this.handleProjectsClick}
               handleAboutClick={() => this.handleAboutClick}
               handleContactClick={() => this.handleContactClick}
+              isMobile={this.detectMobile(userAgent)}
             />
           </div>
-          <div className="section left">
+          <div className="section center">
             <Center
               isAbout={isAbout}
               isContact={isContact}
               isProjects={isProjects}
               renderTimeline={() => this.renderTimeline()}
               navItem={navItem}
+              isNightCol={isNightColor}
+              isNightColor={isNightColor}
             />
           </div>
           <div className="section right">

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import About from '../About/About';
 import ScrollBar from '../ScrollBar/ScrollBar';
-import ColorShift from '../ColorShift/ColorShift';
 import FadeAnimation from '../styles/FadeAnimation';
 import TimeLineContent from '../TimeLineContent/TimeLineContent';
 import CenterStyles from './styles';
@@ -12,7 +11,6 @@ class Center extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isNightColor: true,
       timeLineContent: null,
       isProjects: false,
       isAbout: false,
@@ -49,13 +47,13 @@ class Center extends Component {
 
   render() {
     const {
-      isNightColor,
       isAbout,
     } = this.state;
 
     const {
       isProjects,
       navItem,
+      isNightColor
     } = this.props;
 
     return (
