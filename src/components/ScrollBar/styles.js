@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const ScrollBarStyles = styled.div`
+   width: 200px;
    height: 100%;
    display: inline-block;
-   float: left;
    overflow: hidden;
 
    button {

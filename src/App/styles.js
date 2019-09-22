@@ -388,14 +388,15 @@ const theme = {
 };
 
 const AppStyles = styled.div`
+  display:flex;
   position: relative;
   justify-content: space-between;
   margin: 100px auto;
   max-height: 1000px;
   max-width: 80%;
 
-  .section {
-      display: inline-block;
+  .center {
+      display: flex;
   }
 `;
 
