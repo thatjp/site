@@ -389,15 +389,28 @@ const theme = {
 
 const AppStyles = styled.div`
   display:flex;
-  /* flex-direction: column; */
   position: relative;
-  /* justify-content: space-between; */
   margin: 100px auto;
   max-height: 1000px;
   max-width: 80%;
 
+  ${({ mobile }) => (mobile ? `
+    flex-direction: column;
+    max-width: 95%;
+    margin: 20px auto;
+    max-height: 1vh;
+  ` : `
+    lex-direction: row; 
+    max-width: 90%;
+  `)}
+
+  .top {
+  flex-grow: 1;
+  }
+  
   .center {
       display: flex;
+      flex-grow: ${props => (props.mobile ? 1 : 0)};
   }
 
   .left {

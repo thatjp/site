@@ -89,7 +89,7 @@ class App extends Component {
     }
   };
 
-  detectMobile = (userAgent) => (
+  detectMobile = userAgent => (
     isMobile(userAgent).any
   );
 
@@ -107,28 +107,50 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ThemeProvider theme={theme}>
-          <AppStyles>
+          <AppStyles
+            mobile={this.detectMobile(userAgent)}
+          >
             <GlobalStyle
               nightTime={isNightColor}
             />
-            <div className="section left">
-              <Nav
-                openContent={this.openContent}
-                onClick={this.handleClick}
-                about={isOpen.about}
-                projects={isOpen.projects}
-                sketches={isOpen.sketches}
-                resume={isOpen.resume}
-                nightTime={isNightColor}
-                handleProjectsClick={() => this.handleProjectsClick}
-                handleAboutClick={() => this.handleAboutClick}
-                handleContactClick={() => this.handleContactClick}
-                isMobile={this.detectMobile(userAgent)}
-              />
-              <ColorShift
-                handleColorShiftClick={bool => this.handleColorShiftClick(bool)}
-              />
-            </div>
+
+            {this.detectMobile(userAgent) ? (
+              <div className="section top">
+                <Nav
+                  openContent={this.openContent}
+                  onClick={this.handleClick}
+                  about={isOpen.about}
+                  projects={isOpen.projects}
+                  sketches={isOpen.sketches}
+                  resume={isOpen.resume}
+                  nightTime={isNightColor}
+                  handleProjectsClick={() => this.handleProjectsClick}
+                  handleAboutClick={() => this.handleAboutClick}
+                  handleContactClick={() => this.handleContactClick}
+                  isMobile={this.detectMobile(userAgent)}
+                />
+              </div>
+            ) : (
+              <div className="section left">
+                <Nav
+                  openContent={this.openContent}
+                  onClick={this.handleClick}
+                  about={isOpen.about}
+                  projects={isOpen.projects}
+                  sketches={isOpen.sketches}
+                  resume={isOpen.resume}
+                  nightTime={isNightColor}
+                  handleProjectsClick={() => this.handleProjectsClick}
+                  handleAboutClick={() => this.handleAboutClick}
+                  handleContactClick={() => this.handleContactClick}
+                  isMobile={this.detectMobile(userAgent)}
+                />
+                <ColorShift
+                  handleColorShiftClick={bool => this.handleColorShiftClick(bool)}
+                />
+              </div>
+            )
+            }
             <div className="section center">
               <Center
                 isAbout={isAbout}

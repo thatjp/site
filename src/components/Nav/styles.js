@@ -2,12 +2,31 @@ import styled from 'styled-components';
 
 const NavStyles = styled.div`
   text-align: right;
+  ${({ mobile }) => (mobile ? `
+    margin: 10px;
+  }
+  ` : `
+    margin: 0
+  `)}
+
+  ul {
+    display: ${props => (props.mobile ? 'flex' : 'block')};
+    justify-content: space-around;
+    margin: ${props => (props.mobile ? '30px' : '0')};
+  }
 
   li {
-    display: ${props => (props.isMobile ? 'inline-block' : 'block')}
+    display: ${props => (props.mobile ? 'inline-block' : 'block')};
+    margin-left: 10px;
+  }
+
+  li:first-child {
+    display: ${props => (props.mobile ? 'inline-block' : 'block')};
+    margin-left:${props => (props.mobile ? '0' : '10px')};;
   }
   
   .arrow {
+    display: ${props => (props.mobile ? 'none' : 'block')};;
     width: 10px;
     float: left;
     margin: 6px 0px;
@@ -25,7 +44,6 @@ const NavStyles = styled.div`
     user-select: none;
     font-size: 1rem;
     padding: 5px;
-    margin-left: 10px;
   }
 `;
 

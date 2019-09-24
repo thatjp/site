@@ -59,7 +59,7 @@ class Nav extends React.Component {
 
     return (
       <FadeAnimation>
-        <NavStyles nightTime isMobile={isMobile}>
+        <NavStyles nightTime mobile={isMobile}>
           <ul>
             <li>
               <div
