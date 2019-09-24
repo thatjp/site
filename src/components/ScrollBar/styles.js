@@ -27,9 +27,14 @@ const ScrollBarStyles = styled.div`
    }
    
    .timeline-content {
-      margin-top: 400px;
+      margin-bottom: 400px;
       border-bottom: 1px solid ${props => (props.nightTime ? '#fff' : '#000')};
    }
+
+   .timeline-content:last-child{
+      margin-bottom: 0px;
+   }
+   
    .timeline-content > h2,button{
       margin: 5px 20px 15px;
    }

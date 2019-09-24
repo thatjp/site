@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import isMobile from 'ismobilejs';
+
 import Nav from '../components/Nav/Nav';
 import ColorShift from '../components/ColorShift/ColorShift';
-import About from '../components/About/About';
 import Center from '../components/Center/Center';
+
 import { GlobalStyle, AppStyles, theme } from './styles';
+
+import store from '../redux/store';
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +31,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const userAgent = navigator.userAgent;
+    const { userAgent } = navigator.userAgent;
     this.setState({
       userAgent,
     });
@@ -44,24 +48,6 @@ class App extends Component {
       });
     }
   }
-
-  // handleTimeLineClick = (e) => {
-  //   e.preventDefault();
-  //   const { isProjects } = this.state;
-  //   let item;
-
-  //   if (isProjects) {
-  //     item = projects.projects.filter(project => (
-  //       project.name === e.target.name));
-  //   } else {
-  //     item = projects.work.filter(job => (
-  //       job.name === e.target.name));
-  //   }
-
-  //   this.setState({
-  //     timeLineContent: item[0],
-  //   });
-  // }
 
   handleProjectsClick = () => {
     const { isProjects } = this.state;
@@ -119,45 +105,47 @@ class App extends Component {
     } = this.state;
 
     return (
-      <ThemeProvider theme={theme}>
-        <AppStyles>
-          <GlobalStyle
-            nightTime={isNightColor}
-          />
-          <div className="section left">
-            <Nav
-              openContent={this.openContent}
-              onClick={this.handleClick}
-              about={isOpen.about}
-              projects={isOpen.projects}
-              sketches={isOpen.sketches}
-              resume={isOpen.resume}
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <AppStyles>
+            <GlobalStyle
               nightTime={isNightColor}
-              handleProjectsClick={() => this.handleProjectsClick}
-              handleAboutClick={() => this.handleAboutClick}
-              handleContactClick={() => this.handleContactClick}
-              isMobile={this.detectMobile(userAgent)}
             />
-          </div>
-          <div className="section center">
-            <Center
-              isAbout={isAbout}
-              isContact={isContact}
-              isProjects={isProjects}
-              renderTimeline={() => this.renderTimeline()}
-              navItem={navItem}
-              isNightCol={isNightColor}
-              isNightColor={isNightColor}
-            />
-          </div>
-          <div className="section right">
-            <About />
-            <ColorShift
-              handleColorShiftClick={bool => this.handleColorShiftClick(bool)}
-            />
-          </div>
-        </AppStyles>
-      </ThemeProvider>
+            <div className="section left">
+              <Nav
+                openContent={this.openContent}
+                onClick={this.handleClick}
+                about={isOpen.about}
+                projects={isOpen.projects}
+                sketches={isOpen.sketches}
+                resume={isOpen.resume}
+                nightTime={isNightColor}
+                handleProjectsClick={() => this.handleProjectsClick}
+                handleAboutClick={() => this.handleAboutClick}
+                handleContactClick={() => this.handleContactClick}
+                isMobile={this.detectMobile(userAgent)}
+              />
+              <ColorShift
+                handleColorShiftClick={bool => this.handleColorShiftClick(bool)}
+              />
+            </div>
+            <div className="section center">
+              <Center
+                isAbout={isAbout}
+                isContact={isContact}
+                isProjects={isProjects}
+                renderTimeline={() => this.renderTimeline()}
+                navItem={navItem}
+                isNightCol={isNightColor}
+                isNightColor={isNightColor}
+              />
+            </div>
+            {/* <div className="section right">
+              <About />
+            </div> */}
+          </AppStyles>
+        </ThemeProvider>
+      </Provider>
     );
   }
 }

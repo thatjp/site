@@ -3,10 +3,11 @@ import styled from 'styled-components';
 const ColorShiftStyles = styled.div`
     position: absolute;
     bottom: 0;
+    right: 0;
   .container {
     display: inline-block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 33px;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 22px;

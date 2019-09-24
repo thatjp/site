@@ -1,0 +1,1 @@
+export const NEW_NAV_SECTION = 'NEW_NAV_SECTION';

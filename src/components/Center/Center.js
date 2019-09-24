@@ -46,23 +46,24 @@ class Center extends Component {
   }
 
   render() {
-    const {
-      isAbout,
-    } = this.state;
+    // const {
+    //   isAbout,
+    // } = this.state;
 
     const {
       isProjects,
       navItem,
-      isNightColor
+      isNightColor,
+      isAbout,
     } = this.props;
 
     return (
       <CenterStyles>
-        {isAbout ? (
+        {/* {isAbout ? (
           <div className="section center">
             <About />
           </div>
-        ) : (
+        ) : ( */}
         <>
           <FadeAnimation>
             <div className="section center">
@@ -74,11 +75,13 @@ class Center extends Component {
               />
               <TimeLineContent
                 timeLineContent={this.renderTimeLineConent()}
+                isAbout={isAbout}
               />
             </div>
           </FadeAnimation>
-        </>)
-      }
+        </>
+         {/* )
+       } */}
       </CenterStyles>
     );
   }

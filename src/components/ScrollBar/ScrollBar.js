@@ -33,22 +33,19 @@ class ScrollBar extends Component {
         <h2 className="title">{title}</h2>
         <div className="line">
           <div className="timeline">
-            {/* {projects ? this.shouldTimeLineRender(projects, onTimeLineClick) : null} */}
             {projects
-              ? projects.map((project, idx) => {
-                return (
-                  <div className="timeline-content">
-                    <h2>{project.startDate}</h2>
-                    <button
-                      type="button"
-                      name={project.name}
-                      onClick={onTimeLineClick()}
-                    >
-                      {project.name}
-                    </button>
-                  </div>
-                );
-              }) : null
+              ? projects.map((project, idx) => (
+                <div className="timeline-content">
+                  <h2>{project.startDate}</h2>
+                  <button
+                    type="button"
+                    name={project.name}
+                    onClick={onTimeLineClick()}
+                  >
+                    {project.name}
+                  </button>
+                </div>
+              )) : null
             }
           </div>
         </div>
