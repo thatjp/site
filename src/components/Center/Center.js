@@ -59,11 +59,6 @@ class Center extends Component {
 
     return (
       <CenterStyles>
-        {/* {isAbout ? (
-          <div className="section center">
-            <About />
-          </div>
-        ) : ( */}
         <>
           <FadeAnimation>
             <div className="section center">
@@ -80,8 +75,6 @@ class Center extends Component {
             </div>
           </FadeAnimation>
         </>
-         {/* )
-       } */}
       </CenterStyles>
     );
   }
