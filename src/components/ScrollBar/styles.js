@@ -20,6 +20,7 @@ const ScrollBarStyles = styled.div`
       height: 400px;
       display: inline-block;
       overflow: scroll;
+      -webkit-overflow-scrolling: touch;
       border-left: 1px solid ${props => (props.nightTime ? '#fff' : '#000')};
       ::-webkit-scrollbar { 
          display: none; 
