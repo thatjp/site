@@ -25,12 +25,10 @@ class ScrollBar extends Component {
       onTimeLineClick,
       nightTime,
       projects,
-      title,
     } = this.props;
 
     return (
       <ScrollBarStyles nightTime={nightTime}>
-        <h2 className="title">{title}</h2>
         <div className="line">
           <div className="timeline">
             {projects
@@ -49,7 +47,6 @@ class ScrollBar extends Component {
             }
           </div>
         </div>
-        {/* <NavArrowSvg nightTime="false" isScrollBarArrow={true} /> */}
       </ScrollBarStyles>
     );
   }
@@ -59,7 +56,6 @@ ScrollBar.propTypes = {
   onTimeLineClick: PropTypes.func.isRequired,
   nightTime: PropTypes.bool.isRequired,
   projects: PropTypes.object.isRequired,
-  title: PropTypes.string,
 };
 
 export default ScrollBar;

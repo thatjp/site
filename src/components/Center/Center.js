@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import About from '../About/About';
+import PropTypes from 'prop-types';
 import ScrollBar from '../ScrollBar/ScrollBar';
 import FadeAnimation from '../styles/FadeAnimation';
 import TimeLineContent from '../TimeLineContent/TimeLineContent';
@@ -12,10 +11,6 @@ class Center extends Component {
     super(props);
     this.state = {
       timeLineContent: null,
-      isProjects: false,
-      isAbout: false,
-      isContact: false,
-      navItem: null,
     };
   }
 
@@ -46,13 +41,9 @@ class Center extends Component {
   }
 
   render() {
-    // const {
-    //   isAbout,
-    // } = this.state;
 
     const {
       isProjects,
-      navItem,
       isNightColor,
       isAbout,
     } = this.props;
@@ -63,7 +54,6 @@ class Center extends Component {
           <FadeAnimation>
             <div className="section center">
               <ScrollBar
-                title={navItem}
                 onTimeLineClick={() => this.handleTimeLineClick}
                 nightTime={isNightColor}
                 projects={isProjects ? projects.projects : projects.work}
@@ -79,5 +69,11 @@ class Center extends Component {
     );
   }
 }
+
+Center.propTypes = {
+  isProjects: PropTypes.bool.isRequired,
+  isAbout: PropTypes.bool.isRequired,
+  isNightColor: PropTypes.bool.isRequired,
+};
 
 export default Center;

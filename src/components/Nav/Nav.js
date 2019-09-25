@@ -54,7 +54,7 @@ class Nav extends React.Component {
       handleProjectsClick,
       handleAboutClick,
       handleContactClick,
-      isMobile
+      isMobile,
     } = this.props;
 
     return (
@@ -157,6 +157,10 @@ class Nav extends React.Component {
 Nav.propTypes = {
   onClick: PropTypes.func,
   nightTime: PropTypes.bool.isRequired,
+  isMobile: PropTypes.bool.isRequired,
+  handleContactClick: PropTypes.func.isRequired,
+  handleAboutClick: PropTypes.bool.isRequired,
+  handleProjectsClick: PropTypes.bool.isRequired,
 };
 
 Nav.defaultProps = {

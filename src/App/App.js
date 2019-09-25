@@ -113,7 +113,6 @@ class App extends Component {
             <GlobalStyle
               nightTime={isNightColor}
             />
-
             {this.detectMobile(userAgent) ? (
               <div className="section top">
                 <Nav
@@ -162,9 +161,6 @@ class App extends Component {
                 isNightColor={isNightColor}
               />
             </div>
-            {/* <div className="section right">
-              <About />
-            </div> */}
           </AppStyles>
         </ThemeProvider>
       </Provider>
