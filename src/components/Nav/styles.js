@@ -8,6 +8,7 @@ const NavStyles = styled.div`
   ` : `
     margin: 0
   `)}
+  width: 115px;
 
   ul {
     display: ${props => (props.mobile ? 'flex' : 'block')};
@@ -16,7 +17,8 @@ const NavStyles = styled.div`
   }
 
   li {
-    display: ${props => (props.mobile ? 'inline-block' : 'block')};
+    /* display: ${props => (props.mobile ? 'inline-block' : 'block')}; */
+    display: block;
     margin-left: 10px;
   }
 
@@ -26,10 +28,12 @@ const NavStyles = styled.div`
   }
   
   .arrow {
-    display: ${props => (props.mobile ? 'none' : 'block')};;
+    /* display: ${props => (props.mobile ? 'none' : 'block')}; */
+
     width: 10px;
     float: left;
     margin: 6px 0px;
+    margin-right: 10px;
     color: ${props => (props.nightTime ? '#fff' : '#000')};
   }
 
