@@ -12,11 +12,13 @@ const TimeLineContent = ({ timeLineContent, isAbout }) => {
       {
       isAbout ? <About /> : (
         <div>
+          <Content
+            content={timeLineContent.name}
+          />
           <ContentDescription
             descriptionText={timeLineContent.description}
             responsibilities={timeLineContent.responsibilities}
           />
-          <Content content={timeLineContent.name} />
         </div>
       )
     }

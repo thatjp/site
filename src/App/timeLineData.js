@@ -6,14 +6,17 @@ export const projects = {
       name: 'goldi',
       description: 'At goldi my day to day responsibilities included updating and testing various UI components and features.',
       responsibilities: [
-        'prototyped and develop a WebRTC web based video recorder', 
-        'Used React and Redux to develop UI components', 
+        'prototyped and develop a WebRTC web based video recorder',
+        'Used React and Redux to develop UI components',
         'Implemented unit tests using Jest and Enzyme',
       ],
       type: 'work',
       location: 'New York, NY',
       startDate: 'jan 2018',
       endDate: 'nov 2018',
+      tech_used: [
+        'React', 'Redux', 'Sylus', 'Web RTC',
+      ],
     },
     {
       id: 2,
@@ -28,6 +31,9 @@ export const projects = {
       location: 'New York, NY',
       startDate: 'jan 2019',
       endDate: 'current',
+      tech_used: [
+        'React', 'Redux', 'SCSS', 'Adobe Experience Manager',
+      ],
     },
     {
       id: 3,
@@ -42,6 +48,9 @@ export const projects = {
       location: 'New Haven, CT',
       startDate: 'May 2012',
       endDate: 'Jan 2017',
+      tech_used: [
+        'GraphQL', 'React', 'Redux', 'Styled Components', 'Prisma', 'Express',
+      ],
     },
   ],
   projects: [
@@ -52,6 +61,9 @@ export const projects = {
       type: 'project',
       location: 'New York, NY',
       startDate: 'Nov 2018',
+      tech_used: [
+        'GraphQL', 'React', 'Redux', 'Styled Components', 'Prisma', 'Express',
+      ],
     },
     {
       id: 23,
@@ -62,16 +74,22 @@ export const projects = {
       location: 'New York, NY',
       startDate: 'jan 2019',
       endDate: 'current',
+      tech_used: [
+        'Node', 'React', 'Redux', 'Styled Components',
+      ],
     },
     {
       id: 33,
       name: 'SmileLounge',
       description:
-        'rethinking of dental procedures',
+        'A de',
       type: 'work',
       location: 'New Haven, CT',
       startDate: 'May 2012',
       endDate: 'Jan 2017',
+      tech_used: [
+        'GraphQL', 'React', 'Redux', 'Styled Components', 'Prisma', 'Express',
+      ],
     },
   ],
 };
