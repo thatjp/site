@@ -111,11 +111,14 @@ class Nav extends React.Component {
                 <h2 onClick={handleProjectsClick()}>Projects</h2>
               </div>
             </li>
-            <li>
-              <div
+            <li
+              onMouseEnter={() => this.onNavHover('contact')}
+              onMouseLeave={() => this.onNavExit()}
+            >
+              {/* <div
                 onMouseEnter={() => this.onNavHover('contact')}
                 onMouseLeave={() => this.onNavExit()}
-              >
+              > */}
                 { currentHover === 'contact'
                 && (
                 <FadeAnimation>
@@ -125,7 +128,7 @@ class Nav extends React.Component {
                 </FadeAnimation>
                 )}
                 <h2 onClick={handleContactClick()}>Contact</h2>
-              </div>
+              {/* </div> */}
             </li>
             <li>
               <div

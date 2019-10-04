@@ -12,7 +12,7 @@ export const projects = {
       ],
       type: 'work',
       location: 'New York, NY',
-      startDate: 'jan 2018',
+      startDate: 'Jan 2018',
       endDate: 'nov 2018',
       tech_used: [
         'React', 'Redux', 'Sylus', 'Web RTC',
@@ -29,7 +29,7 @@ export const projects = {
       ],
       type: 'work',
       location: 'New York, NY',
-      startDate: 'jan 2019',
+      startDate: 'Jan 2019',
       endDate: 'current',
       tech_used: [
         'React', 'Redux', 'SCSS', 'Adobe Experience Manager',
@@ -72,7 +72,7 @@ export const projects = {
       type: 'project',
       tags: ['python', 'django', 'react'],
       location: 'New York, NY',
-      startDate: 'jan 2019',
+      startDate: 'Jan 2019',
       endDate: 'current',
       tech_used: [
         'Node', 'React', 'Redux', 'Styled Components',
