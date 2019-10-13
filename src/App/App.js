@@ -159,6 +159,7 @@ class App extends Component {
                 navItem={navItem}
                 isNightCol={isNightColor}
                 isNightColor={isNightColor}
+                isMobile={this.detectMobile(userAgent)}
               />
             </div>
           </AppStyles>

@@ -3,17 +3,17 @@ import styled from 'styled-components';
 const NavStyles = styled.div`
   text-align: right;
   ${({ mobile }) => (mobile ? `
-    margin: 10px;
+    margin-bottom: 20px;
   }
   ` : `
     margin: 0
   `)}
-  width: 115px;
+  width: ${props => (props.mobile ? '100%' : '115px')};
 
   ul {
     display: ${props => (props.mobile ? 'flex' : 'block')};
     justify-content: space-around;
-    margin: ${props => (props.mobile ? '30px' : '0')};
+    /* margin: ${props => (props.mobile ? '30px' : '0')}; */
   }
 
   li {

@@ -6,7 +6,7 @@ import ContentDescription from '../ContentDescription/ContentDescription';
 import Content from '../Content/Content';
 import About from '../About/About';
 
-const TimeLineContent = ({ timeLineContent, isAbout }) => {
+const TimeLineContent = ({ timeLineContent, isAbout, isMobile }) => {
   return (
     <TimeLineContentStyles>
       {
@@ -18,6 +18,7 @@ const TimeLineContent = ({ timeLineContent, isAbout }) => {
           <ContentDescription
             descriptionText={timeLineContent.description}
             responsibilities={timeLineContent.responsibilities}
+            isMobile={isMobile}
           />
         </div>
       )
@@ -29,6 +30,7 @@ const TimeLineContent = ({ timeLineContent, isAbout }) => {
 TimeLineContent.propTypes = {
   timeLineContent: PropTypes.object.isRequired,
   isAbout: PropTypes.bool.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default TimeLineContent;

@@ -46,6 +46,7 @@ class Center extends Component {
       isProjects,
       isNightColor,
       isAbout,
+      isMobile
     } = this.props;
 
     return (
@@ -61,6 +62,7 @@ class Center extends Component {
               <TimeLineContent
                 timeLineContent={this.renderTimeLineConent()}
                 isAbout={isAbout}
+                isMobile={isMobile}
               />
             </div>
           </FadeAnimation>

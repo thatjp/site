@@ -405,16 +405,18 @@ const AppStyles = styled.div`
   `)}
 
   .top {
-  flex-grow: 1;
+    margin: auto;
+    width: 100%;
+    flex-grow: 1;
   }
   
   .center {
-      display: flex;
-      flex-grow: ${props => (props.mobile ? 1 : 0)};
+    display: flex;
+    flex-grow: ${props => (props.mobile ? 1 : 0)};
   }
 
   .left {
-      position: relative;
+    position: relative;  
   }
 `;
 

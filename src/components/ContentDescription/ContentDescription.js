@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ContentDescriptionStyles from './styles';
 
-const ContentDescription = ({ descriptionText, responsibilities }) => (
-  <ContentDescriptionStyles>
+const ContentDescription = ({ descriptionText, responsibilities, isMobile }) => (
+  <ContentDescriptionStyles mobile={isMobile}>
     <p>{descriptionText}</p>
     {responsibilities
       ? (
@@ -21,6 +21,8 @@ const ContentDescription = ({ descriptionText, responsibilities }) => (
 
 ContentDescription.propTypes = {
   descriptionText: PropTypes.string.isRequired,
+  responsibilities: PropTypes.array.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default ContentDescription;

@@ -119,7 +119,7 @@ class Nav extends React.Component {
                 onMouseEnter={() => this.onNavHover('contact')}
                 onMouseLeave={() => this.onNavExit()}
               > */}
-                { currentHover === 'contact'
+              { currentHover === 'contact'
                 && (
                 <FadeAnimation>
                   <div className="arrow">
@@ -127,7 +127,7 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <h2 onClick={handleContactClick()}>Contact</h2>
+              <h2 onClick={handleContactClick()}>Contact</h2>
               {/* </div> */}
             </li>
             <li>
