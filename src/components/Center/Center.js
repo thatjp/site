@@ -14,7 +14,7 @@ class Center extends Component {
     };
   }
 
-  renderTimeLineConent = () => {
+  renderTimeLineContent = () => {
     const { timeLineContent } = this.state;
     if (timeLineContent === null) {
       return projects.work[0];
@@ -24,10 +24,10 @@ class Center extends Component {
 
   handleTimeLineClick = (e) => {
     e.preventDefault();
-    const { isProjects } = this.props;
+    const { whichNavItemOpen } = this.props;
     let item;
 
-    if (isProjects) {
+    if (whichNavItemOpen === 'projects') {
       item = projects.projects.filter(project => (
         project.name === e.target.name));
     } else {
@@ -41,12 +41,10 @@ class Center extends Component {
   }
 
   render() {
-
     const {
-      isProjects,
       isNightColor,
-      isAbout,
-      isMobile
+      isMobile,
+      whichNavItemOpen,
     } = this.props;
 
     return (
@@ -57,11 +55,11 @@ class Center extends Component {
               <ScrollBar
                 onTimeLineClick={() => this.handleTimeLineClick}
                 nightTime={isNightColor}
-                projects={isProjects ? projects.projects : projects.work}
+                projects={whichNavItemOpen === 'projects' ? projects.projects : projects.work}
               />
               <TimeLineContent
-                timeLineContent={this.renderTimeLineConent()}
-                isAbout={isAbout}
+                timeLineContent={this.renderTimeLineContent()}
+                isAbout={whichNavItemOpen === 'about'}
                 isMobile={isMobile}
               />
             </div>

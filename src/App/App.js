@@ -15,14 +15,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: {
-        projects: false,
-        sketches: false,
-        about: false,
-        resume: false,
-      },
       isNightColor: true,
       userAgent: null,
+      whichNavItemOpen: 'about',
       isProjects: false,
       isAbout: false,
       isContact: false,
@@ -72,17 +67,17 @@ class App extends Component {
 
   handleNavClick = (e) => {
     this.setState({
-      navItem: e.target.innerHTML,
+      whichNavItemOpen: e.target.innerHTML.toLowerCase(),
     });
   }
 
   renderTimeline = (projectsData) => {
-    const { navItem } = this.state;
+    const { whichNavItemOpen } = this.state;
 
-    switch (navItem) {
-      case 'Projects':
+    switch (whichNavItemOpen) {
+      case 'projects':
         return projectsData.projects;
-      case 'Work':
+      case 'work':
         return projectsData.work;
       default:
         return null;
@@ -95,13 +90,13 @@ class App extends Component {
 
   render() {
     const {
-      isOpen,
       isProjects,
       isNightColor,
       isAbout,
       isContact,
       navItem,
       userAgent,
+      whichNavItemOpen
     } = this.state;
 
     return (
@@ -116,12 +111,6 @@ class App extends Component {
             {this.detectMobile(userAgent) ? (
               <div className="section top">
                 <Nav
-                  openContent={this.openContent}
-                  onClick={this.handleClick}
-                  about={isOpen.about}
-                  projects={isOpen.projects}
-                  sketches={isOpen.sketches}
-                  resume={isOpen.resume}
                   nightTime={isNightColor}
                   handleProjectsClick={() => this.handleProjectsClick}
                   handleAboutClick={() => this.handleAboutClick}
@@ -132,17 +121,13 @@ class App extends Component {
             ) : (
               <div className="section left">
                 <Nav
-                  openContent={this.openContent}
-                  onClick={this.handleClick}
-                  about={isOpen.about}
-                  projects={isOpen.projects}
-                  sketches={isOpen.sketches}
-                  resume={isOpen.resume}
                   nightTime={isNightColor}
                   handleProjectsClick={() => this.handleProjectsClick}
                   handleAboutClick={() => this.handleAboutClick}
                   handleContactClick={() => this.handleContactClick}
+                  whichNavItemOpen={whichNavItemOpen}
                   isMobile={this.detectMobile(userAgent)}
+                  handleNavClick={() => this.handleNavClick}
                 />
                 <ColorShift
                   handleColorShiftClick={bool => this.handleColorShiftClick(bool)}
@@ -152,6 +137,7 @@ class App extends Component {
             }
             <div className="section center">
               <Center
+                whichNavItemOpen={whichNavItemOpen}
                 isAbout={isAbout}
                 isContact={isContact}
                 isProjects={isProjects}

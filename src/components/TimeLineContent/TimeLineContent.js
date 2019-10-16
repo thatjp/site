@@ -6,26 +6,24 @@ import ContentDescription from '../ContentDescription/ContentDescription';
 import Content from '../Content/Content';
 import About from '../About/About';
 
-const TimeLineContent = ({ timeLineContent, isAbout, isMobile }) => {
-  return (
-    <TimeLineContentStyles>
-      {
-      isAbout ? <About /> : (
-        <div>
-          <Content
-            content={timeLineContent.name}
-          />
-          <ContentDescription
-            descriptionText={timeLineContent.description}
-            responsibilities={timeLineContent.responsibilities}
-            isMobile={isMobile}
-          />
-        </div>
-      )
-    }
-    </TimeLineContentStyles>
-  );
-};
+const TimeLineContent = ({ timeLineContent, isAbout, isMobile }) => (
+  <TimeLineContentStyles>
+    {
+    isAbout ? <About /> : (
+      <div>
+        <Content
+          content={timeLineContent.name}
+        />
+        <ContentDescription
+          descriptionText={timeLineContent.description}
+          responsibilities={timeLineContent.responsibilities}
+          isMobile={isMobile}
+        />
+      </div>
+    )
+  }
+  </TimeLineContentStyles>
+);
 
 TimeLineContent.propTypes = {
   timeLineContent: PropTypes.object.isRequired,

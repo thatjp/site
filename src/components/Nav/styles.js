@@ -2,18 +2,12 @@ import styled from 'styled-components';
 
 const NavStyles = styled.div`
   text-align: right;
-  ${({ mobile }) => (mobile ? `
-    margin-bottom: 20px;
-  }
-  ` : `
-    margin: 0
-  `)}
-  width: ${props => (props.mobile ? '100%' : '115px')};
+  margin-bottom: ${props => (props.mobile ? '20px' : '0')};
+  width: ${props => (props.mobile ? '100%' : '130px')};
 
   ul {
     display: ${props => (props.mobile ? 'flex' : 'block')};
     justify-content: space-around;
-    /* margin: ${props => (props.mobile ? '30px' : '0')}; */
   }
 
   li {

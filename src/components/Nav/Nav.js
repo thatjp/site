@@ -14,27 +14,6 @@ class Nav extends React.Component {
     };
   }
 
-  showProjects = (itemName) => {
-    const { onClick } = this.props;
-
-    switch (itemName) {
-      case 'projects':
-        onClick('projects');
-        break;
-      case 'about':
-        onClick('about');
-        break;
-      case 'sketches':
-        onClick('sketches');
-        break;
-      case 'contact':
-        onClick('contact');
-        break;
-      default:
-        break;
-    }
-  };
-
   onNavHover = (name) => {
     this.setState({
       currentHover: name,
@@ -51,10 +30,9 @@ class Nav extends React.Component {
     const { currentHover } = this.state;
     const {
       nightTime,
-      handleProjectsClick,
-      handleAboutClick,
       handleContactClick,
       isMobile,
+      handleNavClick,
     } = this.props;
 
     return (
@@ -74,7 +52,9 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <h2 onClick={handleAboutClick()}>About</h2>
+                <button type="submit" onClick={handleNavClick()}>
+                  <h2>About</h2>
+                </button>
               </div>
             </li>
             <li>
@@ -90,7 +70,7 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <button name="work" onClick={handleProjectsClick()}>
+                <button type="submit" onClick={handleNavClick()}>
                   <h2>Work</h2>
                 </button>
               </div>
@@ -108,7 +88,9 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-                <h2 onClick={handleProjectsClick()}>Projects</h2>
+                <button type="submit" onClick={handleNavClick()}>
+                  <h2>Projects</h2>
+                </button>
               </div>
             </li>
             <li
@@ -158,16 +140,9 @@ class Nav extends React.Component {
 }
 
 Nav.propTypes = {
-  onClick: PropTypes.func,
   nightTime: PropTypes.bool.isRequired,
   isMobile: PropTypes.bool.isRequired,
   handleContactClick: PropTypes.func.isRequired,
-  handleAboutClick: PropTypes.bool.isRequired,
-  handleProjectsClick: PropTypes.bool.isRequired,
-};
-
-Nav.defaultProps = {
-  onClick: () => {},
 };
 
 export default Nav;
