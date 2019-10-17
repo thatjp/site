@@ -30,7 +30,6 @@ class Nav extends React.Component {
     const { currentHover } = this.state;
     const {
       nightTime,
-      handleContactClick,
       isMobile,
       handleNavClick,
     } = this.props;
@@ -97,10 +96,6 @@ class Nav extends React.Component {
               onMouseEnter={() => this.onNavHover('contact')}
               onMouseLeave={() => this.onNavExit()}
             >
-              {/* <div
-                onMouseEnter={() => this.onNavHover('contact')}
-                onMouseLeave={() => this.onNavExit()}
-              > */}
               { currentHover === 'contact'
                 && (
                 <FadeAnimation>
@@ -109,8 +104,9 @@ class Nav extends React.Component {
                   </div>
                 </FadeAnimation>
                 )}
-              <h2 onClick={handleContactClick()}>Contact</h2>
-              {/* </div> */}
+              <button type="submit" onClick={handleNavClick()}>
+                <h2>Contact</h2>
+              </button>
             </li>
             <li>
               <div
@@ -142,7 +138,7 @@ class Nav extends React.Component {
 Nav.propTypes = {
   nightTime: PropTypes.bool.isRequired,
   isMobile: PropTypes.bool.isRequired,
-  handleContactClick: PropTypes.func.isRequired,
+  handleNavClick: PropTypes.func.isRequired,
 };
 
 export default Nav;

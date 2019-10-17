@@ -96,7 +96,7 @@ class App extends Component {
       isContact,
       navItem,
       userAgent,
-      whichNavItemOpen
+      whichNavItemOpen,
     } = this.state;
 
     return (

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ScrollBarStyles from './styles';
 import NavArrowSvg from '../styles/svg/NavArrow';
-// eslint-disable-next-line react/prefer-stateless-function
+import { generateKey } from '../../utils/utils';
+
 class ScrollBar extends Component {
   shouldTimeLineRender = (projects, onTimeLineClick) => {
-    // return <h2>{projects[0].name}</h2>
     projects.map((project, idx) => (
       <div className="timeline-content">
         <h2>{project.startDate}</h2>
@@ -25,15 +25,21 @@ class ScrollBar extends Component {
       onTimeLineClick,
       nightTime,
       projects,
+      whichNavItemOpen,
     } = this.props;
 
     return (
       <ScrollBarStyles nightTime={nightTime}>
         <div className="line">
+          {whichNavItemOpen !== 'about'
+          && (
           <div className="timeline">
             {projects
-              ? projects.map((project, idx) => (
-                <div className="timeline-content">
+              ? projects.map(project => (
+                <div
+                  className="timeline-content"
+                  key={generateKey('projects')}
+                >
                   <h2>{project.startDate}</h2>
                   <button
                     type="button"
@@ -46,6 +52,7 @@ class ScrollBar extends Component {
               )) : null
             }
           </div>
+          )}
         </div>
       </ScrollBarStyles>
     );
@@ -55,7 +62,8 @@ class ScrollBar extends Component {
 ScrollBar.propTypes = {
   onTimeLineClick: PropTypes.func.isRequired,
   nightTime: PropTypes.bool.isRequired,
-  projects: PropTypes.object.isRequired,
+  projects: PropTypes.array.isRequired,
+  whichNavItemOpen: PropTypes.string.isRequired,
 };
 
 export default ScrollBar;

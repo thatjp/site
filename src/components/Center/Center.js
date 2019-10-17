@@ -15,11 +15,9 @@ class Center extends Component {
   }
 
   renderTimeLineContent = () => {
-    const { timeLineContent } = this.state;
-    if (timeLineContent === null) {
-      return projects.work[0];
-    }
-    return timeLineContent;
+    const { whichNavItemOpen } = this.props;
+    if (whichNavItemOpen === 'projects') return projects.projects[0]
+    if (whichNavItemOpen === 'work') return projects.work[0]
   }
 
   handleTimeLineClick = (e) => {
@@ -46,7 +44,7 @@ class Center extends Component {
       isMobile,
       whichNavItemOpen,
     } = this.props;
-
+    console.log('this.renderTimeLineContent()', this.renderTimeLineContent());
     return (
       <CenterStyles>
         <>
@@ -56,6 +54,7 @@ class Center extends Component {
                 onTimeLineClick={() => this.handleTimeLineClick}
                 nightTime={isNightColor}
                 projects={whichNavItemOpen === 'projects' ? projects.projects : projects.work}
+                whichNavItemOpen={whichNavItemOpen}
               />
               <TimeLineContent
                 timeLineContent={this.renderTimeLineContent()}
