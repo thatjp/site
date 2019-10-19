@@ -1,5 +1,5 @@
 import React from 'react';
-import FadeAnimation from '../styles/FadeAnimation';
+import { FadeAnimation } from '../styles/FadeAnimation';
 import SketchesStyles from './styles';
 
 const sketchUrls = {

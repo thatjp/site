@@ -4,7 +4,6 @@ const ContentDescriptionStyles = styled.div`
   float: left;
   max-width: 200px;
   margin-right: ${props => (props.mobile ? '0' : '200px')};
-  /* margin-right: 200px; */
   margin-top: 25px;
 
   ul {

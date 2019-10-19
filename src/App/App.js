@@ -18,9 +18,6 @@ class App extends Component {
       isNightColor: true,
       userAgent: null,
       whichNavItemOpen: 'about',
-      isProjects: false,
-      isAbout: false,
-      isContact: false,
       navItem: null,
     };
   }
@@ -44,45 +41,11 @@ class App extends Component {
     }
   }
 
-  handleProjectsClick = () => {
-    const { isProjects } = this.state;
-    this.setState({
-      isProjects: !isProjects,
-    });
-  };
-
-  handleAboutClick = () => {
-    const { isAbout } = this.state;
-    this.setState({
-      isAbout: !isAbout,
-    });
-  };
-
-  handleContactClick = () => {
-    const { isContact } = this.state;
-    this.setState({
-      isContact: !isContact,
-    });
-  };
-
   handleNavClick = (e) => {
     this.setState({
       whichNavItemOpen: e.target.innerHTML.toLowerCase(),
     });
   }
-
-  renderTimeline = (projectsData) => {
-    const { whichNavItemOpen } = this.state;
-
-    switch (whichNavItemOpen) {
-      case 'projects':
-        return projectsData.projects;
-      case 'work':
-        return projectsData.work;
-      default:
-        return null;
-    }
-  };
 
   detectMobile = userAgent => (
     isMobile(userAgent).any
@@ -90,10 +53,7 @@ class App extends Component {
 
   render() {
     const {
-      isProjects,
       isNightColor,
-      isAbout,
-      isContact,
       navItem,
       userAgent,
       whichNavItemOpen,
@@ -138,10 +98,6 @@ class App extends Component {
             <div className="section center">
               <Center
                 whichNavItemOpen={whichNavItemOpen}
-                isAbout={isAbout}
-                isContact={isContact}
-                isProjects={isProjects}
-                renderTimeline={() => this.renderTimeline()}
                 navItem={navItem}
                 isNightCol={isNightColor}
                 isNightColor={isNightColor}

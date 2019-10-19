@@ -1,5 +1,5 @@
 import React from 'react';
-import FadeAnimation from '../styles/FadeAnimation';
+import { FadeAnimation } from '../styles/FadeAnimation';
 import ContactStyles from './styles';
 
 const urls = {

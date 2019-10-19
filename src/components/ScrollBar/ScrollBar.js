@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ScrollBarStyles from './styles';
-import NavArrowSvg from '../styles/svg/NavArrow';
 import { generateKey } from '../../utils/utils';
+import { SlideinAnimation } from '../styles/FadeAnimation';
 
 class ScrollBar extends Component {
   shouldTimeLineRender = (projects, onTimeLineClick) => {
@@ -33,7 +33,7 @@ class ScrollBar extends Component {
         <div className="line">
           {whichNavItemOpen !== 'about'
           && (
-          <div className="timeline">
+          <SlideinAnimation>
             {projects
               ? projects.map(project => (
                 <div
@@ -51,7 +51,7 @@ class ScrollBar extends Component {
                 </div>
               )) : null
             }
-          </div>
+          </SlideinAnimation>
           )}
         </div>
       </ScrollBarStyles>

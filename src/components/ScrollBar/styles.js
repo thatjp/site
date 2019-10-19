@@ -21,7 +21,7 @@ const ScrollBarStyles = styled.div`
       display: inline-block;
       overflow: scroll;
       -webkit-overflow-scrolling: touch;
-      border-left: 1px solid ${props => (props.nightTime ? '#fff' : '#000')};
+      border-left: .5px solid ${props => (props.nightTime ? '#fff' : '#000')};
       ::-webkit-scrollbar { 
          display: none; 
       }
@@ -29,7 +29,7 @@ const ScrollBarStyles = styled.div`
    
    .timeline-content {
       margin-bottom: 400px;
-      border-bottom: 1px solid ${props => (props.nightTime ? '#fff' : '#000')};
+      border-bottom: .5px solid ${props => (props.nightTime ? '#fff' : '#000')};
    }
 
    .timeline-content:last-child{

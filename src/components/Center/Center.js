@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ScrollBar from '../ScrollBar/ScrollBar';
-import FadeAnimation from '../styles/FadeAnimation';
+import { FadeAnimation } from '../styles/FadeAnimation';
 import TimeLineContent from '../TimeLineContent/TimeLineContent';
 import CenterStyles from './styles';
 import { projects } from '../../App/timeLineData';
@@ -10,14 +10,30 @@ class Center extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timeLineContent: null,
+      timeLineContent: [],
     };
+  }
+
+  componentDidMount() {
+    const { whichNavItemOpen } = this.props;
+    console.log(whichNavItemOpen);
+    const { timeLineContent } = this.state;
+    if (whichNavItemOpen === 'work') {
+      this.setState({
+        timeLineContent: projects.work[0]
+      })
+    } else if (whichNavItemOpen === 'projects') {
+      this.setState({
+        timeLineContent: projects.projects[0]
+      })
+    }
   }
 
   renderTimeLineContent = () => {
     const { whichNavItemOpen } = this.props;
-    if (whichNavItemOpen === 'projects') return projects.projects[0]
-    if (whichNavItemOpen === 'work') return projects.work[0]
+    const { timeLineContent } = this.state;
+    if (whichNavItemOpen === 'projects') return timeLineContent
+    return timeLineContent
   }
 
   handleTimeLineClick = (e) => {
@@ -44,7 +60,11 @@ class Center extends Component {
       isMobile,
       whichNavItemOpen,
     } = this.props;
-    console.log('this.renderTimeLineContent()', this.renderTimeLineContent());
+
+    const {
+      timeLineContent
+    } = this.state;
+
     return (
       <CenterStyles>
         <>
@@ -57,7 +77,7 @@ class Center extends Component {
                 whichNavItemOpen={whichNavItemOpen}
               />
               <TimeLineContent
-                timeLineContent={this.renderTimeLineContent()}
+                timeLineContent={timeLineContent}
                 isAbout={whichNavItemOpen === 'about'}
                 isMobile={isMobile}
               />

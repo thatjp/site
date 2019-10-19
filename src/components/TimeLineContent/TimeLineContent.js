@@ -25,8 +25,12 @@ const TimeLineContent = ({ timeLineContent, isAbout, isMobile }) => (
   </TimeLineContentStyles>
 );
 
+TimeLineContent.defaultProps = {
+  timeLineContent: {},
+};
+
 TimeLineContent.propTypes = {
-  timeLineContent: PropTypes.object.isRequired,
+  timeLineContent: PropTypes.object,
   isAbout: PropTypes.bool.isRequired,
   isMobile: PropTypes.bool.isRequired,
 };

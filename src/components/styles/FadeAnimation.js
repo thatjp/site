@@ -9,8 +9,21 @@ const fade = keyframes`
   }
 `;
 
-const FadeAnimation = styled.div`
-  animation: ${fade} .5s;
+const slidein = keyframes`
+  from {
+     transform: translateX(-100%);
+  }
+
+  to {
+     transform: translateX(0%);
+  }
 `;
 
-export default FadeAnimation;
+
+export const FadeAnimation = styled.div`
+  animation: ${fade} 1s;
+`;
+
+export const SlideinAnimation = styled.div`
+  animation: ${slidein} .5s;
+`;

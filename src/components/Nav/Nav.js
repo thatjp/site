@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NavStyles from './styles';
-import FadeAnimation from '../styles/FadeAnimation';
+import { FadeAnimation } from '../styles/FadeAnimation';
 import NavArrowSvg from '../styles/svg/NavArrow';
 
 class Nav extends React.Component {
