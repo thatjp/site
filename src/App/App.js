@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
+import { Switch, Route } from 'react-router-dom';
 import isMobile from 'ismobilejs';
-
+import About from '../components/About/About';
 import Nav from '../components/Nav/Nav';
 import ColorShift from '../components/ColorShift/ColorShift';
 import Center from '../components/Center/Center';
 
 import { GlobalStyle, AppStyles, theme } from './styles';
-
-import store from '../redux/store';
 
 class App extends Component {
   constructor(props) {
@@ -60,53 +59,62 @@ class App extends Component {
     } = this.state;
 
     return (
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <AppStyles
-            mobile={this.detectMobile(userAgent)}
-          >
-            <GlobalStyle
-              nightTime={isNightColor}
-            />
-            {this.detectMobile(userAgent) ? (
-              <div className="section top">
-                <Nav
-                  nightTime={isNightColor}
-                  handleProjectsClick={() => this.handleProjectsClick}
-                  handleAboutClick={() => this.handleAboutClick}
-                  handleContactClick={() => this.handleContactClick}
-                  isMobile={this.detectMobile(userAgent)}
-                />
-              </div>
-            ) : (
-              <div className="section left">
-                <Nav
-                  nightTime={isNightColor}
-                  handleProjectsClick={() => this.handleProjectsClick}
-                  handleAboutClick={() => this.handleAboutClick}
-                  handleContactClick={() => this.handleContactClick}
-                  whichNavItemOpen={whichNavItemOpen}
-                  isMobile={this.detectMobile(userAgent)}
-                  handleNavClick={() => this.handleNavClick}
-                />
-                <ColorShift
-                  handleColorShiftClick={bool => this.handleColorShiftClick(bool)}
-                />
-              </div>
-            )
-            }
-            <div className="section center">
-              <Center
-                whichNavItemOpen={whichNavItemOpen}
-                navItem={navItem}
-                isNightCol={isNightColor}
-                isNightColor={isNightColor}
+      <ThemeProvider theme={theme}>
+        <AppStyles
+          mobile={this.detectMobile(userAgent)}
+        >
+          <GlobalStyle
+            nightTime={isNightColor}
+          />
+          {this.detectMobile(userAgent) ? (
+            <div className="section top">
+              <Nav
+                nightTime={isNightColor}
+                handleProjectsClick={() => this.handleProjectsClick}
+                handleAboutClick={() => this.handleAboutClick}
+                handleContactClick={() => this.handleContactClick}
                 isMobile={this.detectMobile(userAgent)}
               />
             </div>
-          </AppStyles>
-        </ThemeProvider>
-      </Provider>
+          ) : (
+            <div className="section left">
+              <Nav
+                nightTime={isNightColor}
+                handleProjectsClick={() => this.handleProjectsClick}
+                handleAboutClick={() => this.handleAboutClick}
+                handleContactClick={() => this.handleContactClick}
+                whichNavItemOpen={whichNavItemOpen}
+                isMobile={this.detectMobile(userAgent)}
+                handleNavClick={() => this.handleNavClick}
+              />
+              <ColorShift
+                handleColorShiftClick={bool => this.handleColorShiftClick(bool)}
+              />
+            </div>
+          )
+          }
+          <div className="section center">
+            <Center
+              whichNavItemOpen={whichNavItemOpen}
+              navItem={navItem}
+              isNightCol={isNightColor}
+              isNightColor={isNightColor}
+              isMobile={this.detectMobile(userAgent)}
+            />
+            <Switch>
+              <Route
+                exact
+                path={['/about', '/work', '/projects', '/contact']}
+                render={props => (
+                  <Center
+                    {...props}
+                  />
+                )}
+              />
+            </Switch>
+          </div>
+        </AppStyles>
+      </ThemeProvider>
     );
   }
 }

@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import NavStyles from './styles';
 import { FadeAnimation } from '../styles/FadeAnimation';
@@ -52,7 +53,9 @@ class Nav extends React.Component {
                 </FadeAnimation>
                 )}
                 <button type="submit" onClick={handleNavClick()}>
-                  <h2>About</h2>
+                  <Link to="about">
+                    <h2>About</h2>
+                  </Link>
                 </button>
               </div>
             </li>
@@ -70,7 +73,9 @@ class Nav extends React.Component {
                 </FadeAnimation>
                 )}
                 <button type="submit" onClick={handleNavClick()}>
-                  <h2>Work</h2>
+                  <Link to="work">
+                    <h2>Work</h2>
+                  </Link>
                 </button>
               </div>
             </li>
@@ -88,7 +93,9 @@ class Nav extends React.Component {
                 </FadeAnimation>
                 )}
                 <button type="submit" onClick={handleNavClick()}>
-                  <h2>Projects</h2>
+                  <Link to="projects">
+                    <h2>Projects</h2>
+                  </Link>
                 </button>
               </div>
             </li>
@@ -105,7 +112,9 @@ class Nav extends React.Component {
                 </FadeAnimation>
                 )}
               <button type="submit" onClick={handleNavClick()}>
-                <h2>Contact</h2>
+                <Link to="contact">
+                  <h2>Contact</h2>
+                </Link>
               </button>
             </li>
             <li>
