@@ -16,7 +16,6 @@ class Center extends Component {
 
   componentDidMount() {
     const { whichNavItemOpen } = this.props;
-    console.log(whichNavItemOpen);
     const { timeLineContent } = this.state;
     if (whichNavItemOpen === 'work') {
       this.setState({

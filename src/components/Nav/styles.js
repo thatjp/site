@@ -31,6 +31,7 @@ const NavStyles = styled.div`
   }
 
   h2 {
+    font-size: 1rem;
     transition: color 0.2s ease;
     cursor: pointer;
     -webkit-touch-callout: none; /* iOS Safari */

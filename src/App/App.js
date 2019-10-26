@@ -74,6 +74,7 @@ class App extends Component {
                 handleAboutClick={() => this.handleAboutClick}
                 handleContactClick={() => this.handleContactClick}
                 isMobile={this.detectMobile(userAgent)}
+                handleNavClick={() => this.handleNavClick}
               />
             </div>
           ) : (
