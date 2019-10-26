@@ -94,20 +94,17 @@ class App extends Component {
           )
           }
           <div className="section center">
-            <Center
-              whichNavItemOpen={whichNavItemOpen}
-              navItem={navItem}
-              isNightCol={isNightColor}
-              isNightColor={isNightColor}
-              isMobile={this.detectMobile(userAgent)}
-            />
             <Switch>
               <Route
                 exact
-                path={['/about', '/work', '/projects', '/contact']}
-                render={props => (
+                path={['/', '/about', '/work', '/projects', '/contact']}
+                render={() => (
                   <Center
-                    {...props}
+                    whichNavItemOpen={whichNavItemOpen}
+                    navItem={navItem}
+                    isNightCol={isNightColor}
+                    isNightColor={isNightColor}
+                    isMobile={this.detectMobile(userAgent)}
                   />
                 )}
               />
